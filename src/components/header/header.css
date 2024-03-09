@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+:root{
+    --FontElegant: 'Nanum Myeongjo', serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.userContact{
+    display: flex;
+    font-size: 13px;
+    color: #d8be85;
+    padding: 5px;
+    border-radius: 50px;
+    gap: 10px;
+    height: 50px;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#name{
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: gray;
+    font-family: var(--FontElegant);
+}
+
+#correo{
+    margin-top: -3px;
+    font-family: var(--FontElegant);
+    letter-spacing: 1.2px;
+    color: gray;
+}

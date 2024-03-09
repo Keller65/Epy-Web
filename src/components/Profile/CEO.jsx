@@ -1,0 +1,102 @@
+import { HeaderComponent } from '../header/header';
+import { BadgeCheck } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { getDatabase, set, ref, onValue, remove } from "firebase/database";
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { app } from '../data';
+import './CEO.css';
+
+export function ProfileCEO() {
+    const photoCEO = 'https://lh3.googleusercontent.com/a/ACg8ocLRTFF4soMeKO7cz0kHGnoDC7TbsaLuaryjWHPmioBWJg=s96-c';
+    const [follow, setFollow] = useState(true);
+    const [totalFollowers, setTotalFollowers] = useState(0);
+
+    const auth = getAuth(app);
+
+    useEffect(() => {
+        const unsubscriber = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                GetFollowers();
+            } else {
+                console.log('No estás autenticado');
+            }
+        });
+
+        return () => unsubscriber();
+    }, [auth]);
+
+    const GetFollowers = () => {
+        const databaseFollowers = getDatabase(app);
+        const path = ref(databaseFollowers, 'followers');
+        const uid = auth.currentUser ? auth.currentUser.uid : null;
+
+        onValue(path, (snapshot) => {
+            const followersData = snapshot.val();
+
+            if (followersData) {
+                const followerDataForCurrentUser = followersData[uid];
+
+                if (followerDataForCurrentUser) {
+                    setFollow(followerDataForCurrentUser.follow);
+                }
+            }
+
+            const totalFollowers = followersData ? Object.keys(followersData).length : 0;
+            setTotalFollowers(totalFollowers);
+        });
+    };
+
+    const followUser = () => {
+        const uid = auth.currentUser ? auth.currentUser.uid : null;
+
+        setFollow((prevFollow) => !prevFollow);
+
+        function writeUserData() {
+            const db = getDatabase();
+            set(ref(db, 'followers/' + uid), {
+                follow: !follow
+            });
+        }
+
+        function deleteUserData() {
+            const db = getDatabase();
+            remove(ref(db, 'followers/' + uid));
+        }
+
+        if (!follow) {
+            deleteUserData();
+        } else {
+            writeUserData();
+        }
+    };
+
+    return (
+        <div className="CEO__screen">
+            <HeaderComponent />
+
+            <header className="CEO__Profile">
+                <picture className='container__picture'>
+                    <img src={photoCEO} alt="photo CEO" id='photo__CEO' />
+                    <BadgeCheck className='icon__check' size={20} fill="#ffdc38" stroke="#fffcf7" />
+                </picture>
+
+                <div>
+                    <p id="name_ceo">Margie Lopez</p>
+                    <p id='followers'>{totalFollowers} seguidores</p>
+                </div>
+
+                <button className={`${follow ? 'following' : 'not-following'}`} onClick={followUser}>
+                    {follow ? 'seguir' : 'siguiendo'}
+                </button>
+            </header>
+
+            <main className='tags__ceo__container'>
+                <div className="tag__ceo">CEO</div>
+                <div className="tag__ceo">Propietaria</div>
+                <div className="tag__ceo">Creadora</div>
+                <div className="tag__ceo">Impulsadora</div>
+                <div className="tag__ceo">Analista</div>
+            </main>
+        </div>
+    );
+}

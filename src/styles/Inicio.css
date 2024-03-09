@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --Onest: 'Onest', sans-serif;
+    --Spacing: 2px;
+    --FontAwesone: Helvetica W01, Microsoft YaHei, 微软雅黑, SimHei, 黑体, PingFang SC, 萍方, Noto Sans, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-display: swap;
+}
+
+body {
+    background-color: #fffcf7;
+    display: flex;
+    flex-direction: column;
+}
+
+.foto {
+    display: none;
+}
+
+.InicioAppp {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content-class-sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#seccion-izquierda {
+    width: 100%;
+    height: 90vh;
+}
+
+#seccion-post {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 80px 0;
+    position: relative;
+    border-radius: 5px;
+}
+
+#post_img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    transition: all 200ms ease-in;
+}
+
+.menu {
+    height: auto;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.Saludo {
+    font-size: 65px;
+    font-weight: 400;
+    color: #000000;
+    font-family: var(--Onest);
+}
+
+span {
+    display: flex;
+    align-items: center;
+    font-size: 45px;
+    gap: 20px;
+    font-weight: 300;
+    color: #8d8d8d;
+    margin-top: -30px;
+    font-family: var(--Onest);
+}
+
+#location-svg {
+    height: 20px;
+    width: 20px;
+}
+
+.ubicacion {
+    color: #616161;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    width: fit-content;
+    font-family: var(--FontAwesone);
+    letter-spacing: var(--Spacing);
+}
+
+.controls {
+    display: flex;
+    height: 50px;
+    gap: 20px;
+    position: absolute;
+    right: 0;
+    padding: 20px 0 0 0;
+    align-items: center;
+}
+
+.FotoUser {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    top: 10px;
+    right: 10px;
+}
+
+.iconLupa {
+    height: 30px;
+}
+
+.marcaLogos {
+    height: 50px;
+    cursor: pointer;
+    width: auto;
+    margin: 0 120px;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.slider {
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+}
+
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, #fffcf7 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+
+.slider .slide {
+    height: 50px;
+    width: 250px;
+}
+
+.slide img {
+    height: 50px;
+}
+
+.Icon {
+    height: 100%;
+}
+
+.cardPresentacion {
+    height: auto;
+    width: 560px;
+    border-radius: 33px;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+.ilustracion {
+    height: 100%;
+    width: 100%;
+}
+
+#ediciones {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#carruselSection-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 40px;
+    width: 45%;
+}
+
+.card {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_imagenes {
+    position: relative;
+}
+
+.presentacion-img {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(236, 236, 236, 0.63);
+}
+
+.imagenHover {
+    display: none;
+    height: 20px;
+}
+
+.presentacion-img:active+.imagenHover {
+    content: "";
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    position: absolute;
+    display: grid;
+    place-content: center;
+    top: 0;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.eslogan {
+    margin: 20px 0;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family: var(--Onest);
+    text-wrap: balance;
+    max-inline-size: 50ch;
+    white-space: unset;
+}
+
+#promociones {
+    width: 62%;
+    margin: auto;
+    height: 20rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.imagen_producto_promocion {
+    height: 100%;
+    width: auto;
+}
+
+@media (max-width: 450px) {
+    #promociones {
+        width: 100%;
+    }
+
+
+    .makeUp-temporada {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+    }
+
+    .InicioAppp {
+        height: auto;
+        width: 100%;
+        padding: 5px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        overflow-x: scroll;
+    }
+
+    .content-class-sections {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #seccion-izquierda {
+        width: 100%;
+        height: auto;
+        padding-bottom: 150px;
+    }
+
+    #seccion-derecha {
+        width: 100%;
+        height: 200px;
+    }
+
+    .foto {
+        display: block;
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+    }
+
+    .menu {
+        height: auto;
+        width: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+        display: flex;
+        gap: 10px;
+    }
+
+    .Saludo {
+        font-size: 55px;
+        font-weight: 400;
+        color: gray;
+    }
+
+    span {
+        display: block;
+        font-size: 35px;
+        font-weight: 600;
+        color: black;
+        margin-top: -10px;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: row-reverse;
+        height: fit-content;
+        gap: 20px;
+        position: absolute;
+        right: 0;
+        align-items: center;
+        padding: 10px 0 0 0;
+    }
+
+    .FotoUser {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        top: 10px;
+        right: 10px;
+    }
+
+    .iconLupa {
+        height: 30px;
+    }
+
+    .Icon {
+        height: 100%;
+    }
+
+    .cardPresentacion {
+        height: auto;
+        width: 100%;
+        border-radius: 20px;
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ubicacion {
+        font-weight: 500;
+        font-size: 17px;
+    }
+
+    .ilustracion {
+        width: 100%;
+    }
+
+    .userContact p {
+        display: none;
+    }
+
+    .userContact {
+        background-color: transparent;
+    }
+
+    .contact {
+        display: none;
+    }
+
+    #ediciones {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+    }
+
+    #carruselSection-cards {
+        gap: 5px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .zahaIMG {
+        display: none;
+    }
+
+    .card {
+        width: 164px;
+        user-select: none;
+    }
+
+    .makeUp_Ilustracion_picture {
+        height: 164px;
+        width: 164px;
+        user-select: none;
+    }
+
+    .presentacion-img {
+        height: 100%;
+        background-color: rgba(236, 236, 236, 0.63);
+        user-select: none;
+    }
+
+    .presentacion-img:hover+.imagenHover {
+        height: 164px;
+        width: 164px;
+        user-select: none;
+    }
+
+    .marcaLogos {
+        margin: 0 5px;
+    }
+}

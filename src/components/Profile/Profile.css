@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+
+:root {
+    --Onest: 'Onest', sans-serif;
+    --Montserrat: 'Montserrat Alternates', sans-serif;
+}
+
+* {
+    font-family: var(--Montserrat);
+    font-display: swap;
+}
+
+.Profile {
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 0 30px 0;
+}
+
+.header__profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+.foto__profile {
+    border-radius: 50%;
+    height: 3.7rem;
+    width: 3.7rem;
+}
+
+.information__user {
+    display: flex;
+    flex-direction: column;
+}
+
+.saludo__profile {
+    font-size: 1.2rem;
+    color: #B1B1B1;
+}
+
+.name__container {
+    display: flex;
+    gap: 2px;
+    font-weight: 600;
+}
+
+.carrusel__profile {
+    width: 100%;
+    /*383px*/
+    height: 250px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.card__profile {
+    height: 100%;
+    width: 383px;
+    border-radius: 20px;
+    background-color: #fff2e6;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.card__profile__2 {
+    background-color: black;
+    height: 100%;
+    width: 383px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    color: white;
+    overflow: hidden;
+}
+
+#ediciones__profile {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    aspect-ratio: 1;
+}
+
+.information_card {
+    height: 100%;
+    padding: 25px;
+}
+
+.title__card {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.Subtitle__card {
+    font-size: 0.8rem;
+    margin-top: -5px;
+}
+
+#button__profile {
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+    margin-top: 20px;
+}
+
+#button__profile__2 {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 15px;
+    margin-top: 20px;
+}
+
+.gastos__card {
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    height: 45px;
+    position: relative;
+    color: #d4a373;
+}
+
+.iconbills {
+    background-color: #faedcd;
+    height: 45px;
+    width: 45px;
+    display: grid;
+    place-content: center;
+    border-radius: 13px;
+}
+
+.favoritos {
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    height: 45px;
+    position: relative;
+}
+
+.container__regalos {
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    height: 45px;
+    position: relative;
+}
+
+.link {
+    width: 100%;
+}
+
+.iconfav {
+    border: solid 1px #cf82ff;
+    height: 45px;
+    width: 50px;
+    display: grid;
+    place-content: center;
+    border-radius: 13px;
+    position: relative;
+}
+
+.iconRegalos {
+    height: 45px;
+    width: 45px;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.iconSMS {
+    height: 45px;
+    width: 45px;
+    display: grid;
+    place-content: center;
+    position: relative;
+    background-color: #ffe6cf;
+    border-radius: 12px;
+}
+
+.margie_jpg {
+    border-radius: 50%;
+}
+
+.link__ceo {
+    display: flex;
+    flex-direction: column;
+}
+
+.name__tag {
+    font-size: .8rem;
+    color: gray;
+}
+
+.username_tag {
+    font-size: .7rem;
+    line-height: 10px;
+    font-weight: 600;
+}
+
+.verify__ceo {
+    position: absolute;
+    bottom: -4px;
+    right: -3px;
+}
+
+.chevron__container {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+#favoritos__total {
+    font-size: 0.7rem;
+    position: absolute;
+    top: -10px;
+    left: -7px;
+    background-color: #fffcf7;
+    color: #cf82ff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-content: center;
+    border: solid 1px #cf82ff;
+}
+
+#tags {
+    display: flex;
+    gap: 10px;
+}
+
+#cerrar__sesion {
+    background-color: #70BAFF;
+    padding: 5px 20px;
+    color: #fffcf7;
+    border-radius: 20px;
+    border: solid 1px #70BAFF;
+    position: absolute;
+    right: 10px;
+}
+
+#cerrar__sesion:hover {
+    background-color: #ff707011;
+    color: #ff7070;
+    border: solid 1px #ff7070;
+}
+
+#story {
+    height: 280px;
+    width: 220px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#profile__story {
+    position: absolute;
+    gap: 6px;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.74), rgb(0, 0, 0));
+    height: 70px;
+    padding: 0 15px;
+}
+
+#duracion {
+    position: absolute;
+    top: 0;
+    color: white;
+}
+
+#file {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 4px;
+}
+
+#file::-webkit-progress-value {
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+video {
+    transform: scale(1);
+}
+
+.role_story {
+    color: white;
+    font-size: 0.5rem;
+    line-height: 10px;
+}
+
+.name__story {
+    color: white;
+    font-size: 0.5rem;
+}
+
+.photo_user__story {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: solid 1.5px rgb(7, 255, 7);
+}
+
+@media (max-width: 450px) {
+    .Profile {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        background-color: #fffcf7;
+        padding-bottom: 70px;
+        margin: 0;
+    }
+
+    .span__total {
+        top: -2px;
+        left: -8px;
+    }
+
+    .Bg_Profile {
+        width: 100%;
+        height: auto;
+    }
+
+    .iconfav {
+        width: 55px;
+    }
+
+    #container__gastos {
+        width: 100%;
+    }
+
+    #tags {
+        width: 100%;
+    }
+
+    .carrusel__profile {
+        flex-direction: column;
+    }
+
+    .card__profile,
+    .card__profile__2 {
+        width: 100%;
+    }
+}

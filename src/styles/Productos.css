@@ -1,0 +1,167 @@
+:root {
+    --Poppins: 'Poppins', sans-serif;
+}
+
+* {
+    font-display: swap;
+}
+
+.Card_Container {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding: 5px 5px 70px 5px;
+    position: relative;
+}
+
+.card-ui {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 220px;
+    overflow: hidden;
+    animation: sing 350ms ease-in;
+    position: relative;
+}
+
+.favorite__button {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.favorite__button:hover {
+    background-color: #e7e7e752;
+    z-index: 1;
+}
+
+.favorite__button__favorite {
+    stroke: #ce79ff;
+    fill: #ce79ff;
+    animation: like-heart-animation 950ms ease-in-out;
+    z-index: 1;
+}
+
+@keyframes like-heart-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        box-shadow: 0 0 0 0px #ce79ff67;
+        transform: rotateZ(0deg);
+    }
+
+    15% {
+        opacity: 0.9;
+        transform: scale(1.2);
+        box-shadow: 0 0 0 2px #ce79ff67;
+        transform: rotateZ(-17deg);
+    }
+
+    30% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 5px #ce79ff67;
+        transform: rotateZ(17deg);
+    }
+
+    45%,
+    80% {
+        opacity: 0.9;
+        transform: scale(1);
+        box-shadow: 0 0 0 0px #ce79ff67;
+        transform: rotateZ(0deg);
+    }
+}
+
+
+@keyframes sing {
+    to {
+        opacity: 1;
+    }
+
+    from {
+        opacity: 0;
+    }
+}
+
+.info-products {
+    width: 50%;
+    position: relative;
+    padding: 10px 0;
+}
+
+.container-picture {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: grid;
+    place-content: center;
+    background-color: #f0ece641;
+    /*ff990041, f0ece641*/
+    cursor: pointer;
+    border-radius: 10px;
+    aspect-ratio: 1;
+}
+
+.Product-img {
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    filter: drop-shadow(-6px 7px 0.5px rgba(0, 0, 0, 0.158));
+    aspect-ratio: 1;
+}
+
+.marcaProducto {
+    font-size: 1.2rem;
+    color: #8d8d8d;
+    font-weight: 200;
+    font-family: var(--Poppins);
+    letter-spacing: -.0769230769rem;
+    cursor: pointer;
+}
+
+.marcaProducto:hover {
+    text-decoration: underline;
+}
+
+.precio {
+    font-size: 0.98rem;
+    color: #8d8d8d;
+    font-weight: 400;
+    letter-spacing: -.0769230769rem;
+}
+
+@media (max-width: 450px) {
+    .Card_Container {
+        gap: 10px;
+        padding: 0 0 70px 0;
+    }
+
+    .card-ui {
+        width: 190px;
+    }
+
+    .container-picture {
+        width: 190px;
+        height: 190px;
+        border: solid 1px rgba(230, 230, 230, 0.486);
+    }
+
+    .favorite__button {
+        top: 5px;
+        right: 5px;
+        z-index: 1;
+    }
+
+    .marcaProducto {
+        font-family: var(--Poppins);
+        letter-spacing: -.0769230769rem;
+        font-weight: 300;
+        font-size: 18px;
+    }
+}

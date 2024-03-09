@@ -1,0 +1,83 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.CEO__screen{
+    padding: 15px 15px 70px 15px;
+    height: 100dvh;
+}
+
+.container__picture{
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+
+#photo__CEO{
+    border-radius: 50%;
+}
+
+.CEO__Profile{
+    display: flex;
+    gap: 10px;
+    line-height: 18px;
+    align-items: center;
+}
+
+#name_ceo{
+    font-size: .9rem;
+}
+
+#followers{
+    font-size: .8rem;
+}
+
+.icon__check{
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+}
+
+.following{
+    width: fit-content;
+    padding: 8px 12px;
+    color: #fffcf7;
+    border-radius: 20px;
+    border: solid 1px #70BAFF;
+    background: #70BAFF;
+    position: absolute;
+    right: 10px;
+}
+
+.not-following{
+    transition: 250ms ease-in-out;
+    width: fit-content;
+    padding: 8px 12px;
+    color: #70BAFF;
+    border-radius: 20px;
+    border: solid 1px #70BAFF;
+    background: #70baff15;
+    position: absolute;
+    right: 10px;
+}
+
+.tags__ceo__container{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.tag__ceo{
+    background-color: #f0f0f0;
+    color: rgb(158, 158, 158);
+    width: fit-content;
+    font-size: .8rem;
+    padding: 2.5px 13px;
+    border-radius: 5px;
+    border: solid 1px rgb(235, 235, 235);
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    gap: 5px;
+}

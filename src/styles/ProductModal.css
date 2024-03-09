@@ -1,0 +1,238 @@
+* {
+    font-display: swap;
+}
+
+.modal-overlay {
+    backdrop-filter: blur(.7px);
+    height: 100vh;
+    position: fixed;
+    display: grid;
+    place-content: center;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+.modal-content {
+    height: 330px;
+    width: fit-content;
+    overflow: hidden;
+    position: relative;
+    background-color: #fffcf7;
+    padding: 10px;
+    border: solid .3px rgb(221, 221, 221);
+    display: flex;
+    z-index: 999;
+}
+
+.information {
+    width: 350px;
+}
+
+#sec1 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-container {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: fit-content;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#zoomImage {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#container__picture {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.nombre-modal {
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-family: var(--Montserrat);
+}
+
+.precio-modal {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 9px 20px;
+}
+
+#close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #eeeeee91;
+    border-radius: 50%;
+    padding: 5px;
+    display: grid;
+    place-content: center;
+}
+
+.imagen-modal {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(-7px 9px 0.7px rgb(199, 199, 199));
+}
+
+.addtoCart {
+    background-color: black;
+    color: white;
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 0.8rem;
+    align-items: center;
+}
+
+.descripcion-modal {
+    font-size: 0.9rem;
+    font-family: var(--Montserrat);
+    margin: 15px 0;
+}
+
+.descuento-icon {
+    padding: 5px 15px;
+    position: absolute;
+    background-color: #fff0d8;
+    border-radius: 50px;
+}
+
+#container_tonos {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#text_tonos{
+    background-color: #eeeeee;
+    color: #919191;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 8px;
+}
+
+.tonoCircle {
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+}
+
+.tonoCircle:active {
+    border: solid 2px #000;
+}
+
+@media (max-width: 450px) {
+    .modal-overlay {
+        height: 100%;
+        z-index: 999;
+        background-color: #fffcf7;
+        display: flex;
+    }
+
+    .modal-content {
+        height: auto;
+        width: 100%;
+        background-color: #fffcf7;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #container__picture {
+        height: 350px;
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .imagen-modal {
+        height: 100%;
+        width: auto;
+    }
+
+    .imagen-modal-tono {
+        height: 100%;
+        width: auto;
+    }
+
+    #close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .information {
+        padding: 0 15px;
+        position: relative;
+        width: 100%;
+    }
+
+
+    .nombre-modal {
+        color: #3f3f3f;
+    }
+
+    .marca-modal {
+        font-size: 20px;
+        font-weight: 200;
+        color: #3f3f3f;
+        line-height: 10px;
+    }
+
+    .descripcion-modal {
+        text-align: justify;
+        font-size: 17px;
+        color: #3f3f3f;
+    }
+
+    .addtoCart {
+        background-color: black;
+        color: white;
+        width: 100%;
+        padding: 15px 6px;
+        border-radius: 12px;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 15px;
+        position: relative;
+    }
+
+    .button-container {
+        padding: 10px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        gap: 5px;
+    }
+
+    .precio-modal {
+        font-size: 1.1rem;
+        font-weight: 400;
+        border: none;
+        height: 55px;
+        display: grid;
+        place-content: center;
+    }
+}

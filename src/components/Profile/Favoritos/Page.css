@@ -1,0 +1,67 @@
+:root{
+    --Color: #000000;
+}
+
+.FavoritosPage{
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    background-color: transparent;
+}
+
+.content__card{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px; 
+}
+
+.Producto__Card{
+    width: 174px;
+    position: relative;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.116);
+}
+
+.icon__fav{
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    stroke: var(--Color);
+}
+
+.Producto__Card img{
+    width: 100%;
+    height: auto;
+}
+
+.section__filter{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+}
+
+select{
+    background-color: transparent;
+}
+
+#exit{
+    padding: 4px;
+    stroke: rgb(0, 0, 0);
+}
+
+@media (max-width: 450px) {
+    .FavoritosPage{
+        width: 100%;
+    }
+
+    .content__card{
+        justify-content: flex-start;
+        padding-bottom: 70px;
+    }
+
+    .Producto__Card{
+        width: 190px;
+    }
+}

@@ -1,0 +1,104 @@
+:root{
+    --Selected: #d9c5ff;
+}
+
+*{
+    font-display: swap;
+}
+
+.navbar {
+    padding: 10px;
+    gap: 20px;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrapyy;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+}
+
+.icon-img {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.icon:hover::after {
+    background-color: #ad81ff;
+    content: "";
+    height: 5px;
+    width: 20px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 3px;
+}
+
+.modal {
+    background-color: rgba(241, 241, 241, 0.308);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 99;
+}
+
+.btnModal-close {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-content: center;
+    margin: 10px 10px 0 0;
+    background-color: rgb(228, 228, 228);
+    border-radius: 50%;
+}
+
+@media (max-width: 450px) {
+    .navbar {
+        display: flex;
+        height: auto;
+        width: 100%;
+        background-color: #fffcf7;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        gap: 20px;
+        z-index: 9;
+    }
+
+    .icon {
+        height: 50px;
+        width: 50px;
+        padding: 12px;
+        border-radius: 12px;
+        user-select: none;
+    }
+
+    .icon-img {
+        display: block;
+        height: 35px;
+        width: 35px;
+    }
+
+    .btnModal-close{
+        padding: 10px;
+        background-color: transparent;
+        size: 10px;
+        position: absolute;
+        z-index: 99;
+        size: 5px;
+    }
+}

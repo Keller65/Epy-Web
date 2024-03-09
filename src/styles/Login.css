@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-display: swap;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.PantallaInicio-login{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffcf7;
+}
+
+.Formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.LoginBTN, .FacebookBTN{
+    border: solid 1px #e6e6e6;
+    color: #000000;
+    height: 50px;
+    width: 250px; /*250px*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: 400;
+}
+
+.GoogleImg{
+    height: 35px;
+    aspect-ratio: 1;
+}
+
+.FacebookImg{
+    height: 20px;
+    margin-right: 8px;
+    aspect-ratio: 1;
+}
+
+@media (max-width: 450px) {
+}

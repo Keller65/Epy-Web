@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+:root{
+    --FontElegant: 'Nanum Myeongjo', serif;
+    --Spacing: 2px;
+    --FontAwesone: Helvetica W01,Microsoft YaHei,微软雅黑,SimHei,黑体,PingFang SC,萍方,Noto Sans,sans-serif;
+}
+
+.listaProductos{
+    min-height: 200px;
+    max-height: 400px;
+    height: fit-content;
+    width: 360px;
+    background-color: #fff8ec;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(201, 201, 201, 0.363);
+    position: relative;
+}
+
+#header-page{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.product-list{
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#precio-modal-list{
+    font-family: var(--FontAwesone);
+}
+
+.close-button-page{
+    background-color: #ececec;
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+@media (max-width: 450px){
+    .listaProductos{
+        width: 100%;
+        border-radius: 20px;
+    }
+}
