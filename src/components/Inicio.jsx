@@ -8,6 +8,8 @@ import { MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Inicio.css';
 
+/*Awebo creando readme .md*/
+
 export function InicioApp() {
   const nameUser = localStorage.getItem("nameuser");
   const foto = localStorage.getItem("photoUser");
