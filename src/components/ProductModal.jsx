@@ -74,7 +74,7 @@ const ProductModal = ({ producto, cerrarModal }) => {
 
         <section className='button-container'>
           <button className='addtoCart text-neutral-50 after:absolute active:scale-95 active:transition active:after:scale-x-125 active:after:scale-y-150 active:after:opacity-0 active:after:transition active:after:duration-500' onClick={agregarAlCarrito}>
-            <img src='../../../public/bolsa-blanca.svg' style={{ height: 25, width: 25, aspectRatio: 1 }} />
+            <img src='./bolsa-blanca.svg' style={{ height: 25, width: 25, aspectRatio: 1 }} />
 
             {estadoCarrito || botonTexto}
           </button>
