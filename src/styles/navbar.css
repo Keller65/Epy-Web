@@ -33,16 +33,6 @@
     cursor: pointer;
 }
 
-.icon:hover::after {
-    background-color: #ad81ff;
-    content: "";
-    height: 5px;
-    width: 20px;
-    border-radius: 20px;
-    position: absolute;
-    bottom: 3px;
-}
-
 .modal {
     background-color: rgba(241, 241, 241, 0.308);
     height: 100vh;
