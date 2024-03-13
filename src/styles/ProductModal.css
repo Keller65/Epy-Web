@@ -72,6 +72,22 @@
     padding: 9px 20px;
 }
 
+.controls-image{
+    height: auto;
+    position: absolute;
+}
+
+.asset1{
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #close {
     position: absolute;
     top: 10px;
