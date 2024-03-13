@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { HeaderComponent } from './header/header.jsx';
 import { listaCards, app, Carrusel } from './data.js';
 import { Footer } from './footer/Footer.jsx';
@@ -6,6 +6,7 @@ import { Paletas } from './Paletas/Paletas.jsx';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import LoginModal from './LoginModal.jsx';
 import '../styles/Inicio.css';
 
 export function InicioApp() {
@@ -13,9 +14,8 @@ export function InicioApp() {
   const foto = localStorage.getItem("photoUser");
   const navigate = useNavigate();
   const auth = getAuth(app);
-  const [, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   const [userCountry, setUserCountry] = useState(null);
-  const [scrollOpacity, setScrollOpacity] = useState(0);
   const [imagenes, setImagenes] = useState([]);
 
   useEffect(() => {
@@ -43,7 +43,6 @@ export function InicioApp() {
         Carrusel();
       } else {
         console.log('El usuario no está autenticado');
-        navigate('/');
       }
     });
 
@@ -51,20 +50,6 @@ export function InicioApp() {
       unsubscribe();
     };
   }, [auth, navigate]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const newOpacity = scrollPosition / 400;
-      setScrollOpacity(newOpacity);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -95,7 +80,7 @@ export function InicioApp() {
       <div className="InicioAppp">
         <header className="menu">
           <aside className='controls'>
-            <img src={foto} alt="foto del usuarios" className='foto' />
+            <img src={foto ? foto : 'avatar.svg'} alt="foto del usuarios" className='foto' />
             <HeaderComponent />
           </aside>
         </header>
@@ -190,6 +175,7 @@ export function InicioApp() {
         <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2Fkiko%20milano%20Labial%20(2).png?alt=media&token=5f9b94b0-3012-4efc-9c2f-554cf7d735ed" alt="" />
       </section>
       <Footer />
+      {user ? '' : <LoginModal />}
     </React.Fragment>
   );
 }

@@ -27,58 +27,6 @@
     position: relative;
 }
 
-.favorite__button {
-    position: absolute;
-    top: 5px;
-    right: 8px;
-    padding: 7px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.favorite__button:hover {
-    background-color: #e7e7e752;
-    z-index: 1;
-}
-
-.favorite__button__favorite {
-    stroke: #ce79ff;
-    fill: #ce79ff;
-    animation: like-heart-animation 950ms ease-in-out;
-    z-index: 1;
-}
-
-@keyframes like-heart-animation {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-        box-shadow: 0 0 0 0px #ce79ff67;
-        transform: rotateZ(0deg);
-    }
-
-    15% {
-        opacity: 0.9;
-        transform: scale(1.2);
-        box-shadow: 0 0 0 2px #ce79ff67;
-        transform: rotateZ(-17deg);
-    }
-
-    30% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 5px #ce79ff67;
-        transform: rotateZ(17deg);
-    }
-
-    45%,
-    80% {
-        opacity: 0.9;
-        transform: scale(1);
-        box-shadow: 0 0 0 0px #ce79ff67;
-        transform: rotateZ(0deg);
-    }
-}
-
-
 @keyframes sing {
     to {
         opacity: 1;

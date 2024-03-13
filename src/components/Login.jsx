@@ -57,6 +57,8 @@ export function LoginApp() {
     }
   };
 
+  const MESSAGE_START = 'Iniciar con';
+
   return (
     <div className="PantallaInicio-login">
 
@@ -67,16 +69,16 @@ export function LoginApp() {
             alt="google img"
             className="GoogleImg"
           />
-          Start with Google
+          {MESSAGE_START} Google
         </button>
 
-        <button  className="FacebookBTN" onClick={handleSignInWithFacebook}>
+        <button className="FacebookBTN" onClick={handleSignInWithFacebook}>
           <img
             src="facebook.svg"
             alt="facebook img"
             className="FacebookImg"
           />
-          Start with Facebook
+          {MESSAGE_START} Facebook
         </button>
       </form>
 

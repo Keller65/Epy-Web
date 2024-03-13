@@ -178,7 +178,8 @@ export function Carrito() {
         </button>
 
         <aside id='total-container'>
-          <p className='TotalCompra'>L. {Total.toFixed(2)}</p>
+          <p className='text-[13px] text-[#dbd199]'>Total</p>
+          <p className='TotalCompra leading-[12px]'>L. {Total.toFixed(2)}</p>
         </aside>
       </div>
 

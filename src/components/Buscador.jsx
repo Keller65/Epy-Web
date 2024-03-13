@@ -44,7 +44,7 @@ export function BuscadorApp() {
     setSearchTerm(valor);
     navigate(`/Search?q=${encodeURIComponent(valor)}`);
   };
-  
+
   return (
     <section className="buscador-container">
       <header id="header-buscador">

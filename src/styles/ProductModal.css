@@ -33,7 +33,6 @@
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
 }
 
 .button-container {
@@ -47,10 +46,6 @@
     bottom: 10px;
 }
 
-#zoomImage {
-    background-color: rgba(255, 255, 255, 0);
-}
-
 #container__picture {
     width: 300px;
     display: flex;
@@ -58,7 +53,10 @@
     flex-wrap: wrap;
     overflow: hidden;
     overflow-x: scroll;
+    position: relative;
 }
+
+
 
 .nombre-modal {
     font-weight: 500;
@@ -75,6 +73,12 @@
 .controls-image{
     height: auto;
     position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    left: 0;
 }
 
 .asset1{
@@ -100,8 +104,8 @@
 }
 
 .imagen-modal {
+    aspect-ratio: 1;
     width: 100%;
-    height: auto;
     filter: drop-shadow(-7px 9px 0.7px rgb(199, 199, 199));
 }
 
@@ -117,6 +121,46 @@
     align-items: center;
 }
 
+.favorite__button {
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.favorite__button__favorite {
+    stroke: #ce79ff;
+    fill: #ce79ff;
+    animation: like-heart-animation 950ms ease-in-out;
+}
+
+@keyframes like-heart-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        box-shadow: 0 0 0 0px #ce79ff67;
+    }
+
+    15% {
+        opacity: 0.9;
+        transform: scale(1.2);
+        box-shadow: 0 0 0 2px #ce79ff67;
+    }
+
+    30% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 5px #ce79ff67;
+    }
+
+    45%,
+    80% {
+        opacity: 0.9;
+        transform: scale(1);
+        box-shadow: 0 0 0 0px #ce79ff67;
+        transform: rotateZ(0deg);
+    }
+}
+
 .descripcion-modal {
     font-size: 0.9rem;
     font-family: var(--Montserrat);
@@ -124,10 +168,8 @@
 }
 
 .descuento-icon {
-    padding: 5px 15px;
+    padding: 5px;
     position: absolute;
-    background-color: #fff0d8;
-    border-radius: 50px;
 }
 
 #container_tonos {
@@ -136,7 +178,7 @@
     gap: 5px;
 }
 
-#text_tonos{
+#text_tonos {
     background-color: #eeeeee;
     color: #919191;
     font-size: 12px;
@@ -174,16 +216,19 @@
         height: 350px;
         width: 100%;
         padding: 0 30px;
+        position: relative;
     }
 
     .imagen-modal {
         height: 100%;
         width: auto;
+        aspect-ratio: 1;
     }
 
     .imagen-modal-tono {
         height: 100%;
         width: auto;
+        aspect-ratio: 1;
     }
 
     #close {
@@ -219,10 +264,8 @@
     }
 
     .addtoCart {
-        background-color: black;
-        color: white;
         width: 100%;
-        padding: 15px 6px;
+        padding: 13px 26px;
         border-radius: 12px;
         outline: none;
         display: flex;
@@ -250,5 +293,9 @@
         height: 55px;
         display: grid;
         place-content: center;
+    }
+
+    #sec1 {
+        justify-content: space-between;
     }
 }

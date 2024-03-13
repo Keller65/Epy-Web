@@ -4,15 +4,12 @@ import { collection, getDocs } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, app } from './data';
 import ProductModal from './ProductModal';
-import { Heart } from 'lucide-react';
 import '../styles/Productos.css';
 
 export function ProductosDB({ searchTerm }) {
   const [productos, setProductos] = useState([]);
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
   const [modalAbierto, setModalAbierto] = useState(false);
-  const [favoritos, setFavoritos] = useState({});
-
   const auth = getAuth(app);
 
   const obtenerProductos = async () => {
@@ -41,30 +38,6 @@ export function ProductosDB({ searchTerm }) {
       unsubscribe();
     };
   }, [auth]);
-
-  const addFav = (producto) => {
-    setFavoritos((prevFavoritos) => {
-      const claveUnicaProducto = producto.key;
-      const isFavorito = prevFavoritos[claveUnicaProducto];
-      const nuevosFavoritos = { ...prevFavoritos, [claveUnicaProducto]: !isFavorito };
-
-      const favoritosActuales = JSON.parse(localStorage.getItem('Favoritos')) || [];
-      const { imagenProduct, precio, producto: nombreProducto, key } = producto;
-      const productoEnFavoritos = { imagenProduct, precio, producto: nombreProducto, key };
-
-      if (isFavorito) {
-        const nuevosFavoritosActuales = favoritosActuales.filter(
-          (fav) => fav.key !== claveUnicaProducto
-        );
-        localStorage.setItem('Favoritos', JSON.stringify(nuevosFavoritosActuales));
-      } else {
-        favoritosActuales.push(productoEnFavoritos);
-        localStorage.setItem('Favoritos', JSON.stringify(favoritosActuales));
-      }
-
-      return nuevosFavoritos;
-    });
-  };
 
   const productosFiltrados = searchTerm
     ? productos.filter((producto) => {
@@ -102,14 +75,6 @@ export function ProductosDB({ searchTerm }) {
       <div className='Card_Container'>
         {productosFiltrados.map((producto, index) => (
           <div key={index} className="card-ui">
-            <Heart
-              onClick={() => addFav(producto)}
-              stroke='#000'
-              size={33}
-              className={`favorite__button ${favoritos[producto.key] ? 'favorite__button__favorite' : ''
-                }`}
-            />
-
             <picture className='container-picture' onClick={() => abrirModal(producto)}>
               <img className='Product-img' loading="lazy" src={producto.imagenProduct} alt={producto.producto} />
             </picture>
