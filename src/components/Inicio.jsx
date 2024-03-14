@@ -4,9 +4,9 @@ import { listaCards, app, Carrusel } from './data.js';
 import { Footer } from './footer/Footer.jsx';
 import { Paletas } from './Paletas/Paletas.jsx';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import LoginModal from './LoginModal.jsx';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'
 import '../styles/Inicio.css';
 
 export function InicioApp() {
@@ -75,6 +75,8 @@ export function InicioApp() {
     }
   }, []);
 
+  const text = `Bienvenido ${nameUser ? nameUser : 'Visitante'}!`.split("  ");
+
   return (
     <React.Fragment>
       <div className="InicioAppp">
@@ -89,20 +91,45 @@ export function InicioApp() {
           <div>
             <section id='presentacion-screen'>
               <div className='flex justify-center items-center flex-col'>
-                <p className='leading-[0]'>Bienvenido {nameUser ? nameUser : 'Visitante'}!</p>
-                <p className='font-semibold text-marca'>EPY MACKEUP</p>
+                {/*<p className='leading-[0]'>Bienvenido {nameUser ? nameUser : 'Visitante'}!</p>*/}
+                {text.map((el, i) => (
+                  <motion.span
+                    className='leading-[0]'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 1.15,
+                      delay: i / 10,
+                    }}
+                    key={i}
+                  >
+                    {el}{" "}
+                  </motion.span>
+                ))}
+                {/*<p className='font-semibold text-marca'>EPY MACKEUP</p>*/}
+                <motion.p
+                  className='font-semibold text-marca opacity-0'
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, y: 10 }}
+                  transition={{
+                    opacity: { ease: "linear" },
+                    layout: { duration: 10 }
+                  }}
+                >
+                  EPY MACKEUP
+                </motion.p>
               </div>
 
               <section className='flex gap-4'>
-                <button className=' bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
+                <Link to='/Search' className=' bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
                   Empezar
-                </button>
+                </Link>
 
                 <button className='bg-[transparent] text-[#000] p-[5px] flex items-center justify-center gap-[2px]'>
                   ver mas
                   <img src="chevron.svg" alt="chevron" className='h-[18px] w-[18px]' />
                 </button>
-
               </section>
             </section>
 
@@ -161,7 +188,7 @@ export function InicioApp() {
         <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2Fkiko%20milano%20Labial%20(2).png?alt=media&token=5f9b94b0-3012-4efc-9c2f-554cf7d735ed" alt="" />
       </section>
       <Footer />
-      {user ? '' : <LoginModal />}
+      {/*{user ? '' : <LoginModal />}*/}
     </React.Fragment>
   );
 }
