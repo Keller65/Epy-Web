@@ -102,7 +102,7 @@ body {
     border-radius: 10px;
 }
 
-.recomendaciones{
+.recomendaciones {
     height: 60px;
     width: 100%;
     background-color: #AAAAAA;
@@ -136,7 +136,7 @@ body {
         border-color: #AAAAAA;
     }
 
-    .lupa-icon{
+    .lupa-icon {
         height: 18px;
         width: 18px;
         margin-left: 5px;
