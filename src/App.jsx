@@ -35,6 +35,7 @@ export function App() {
 
           <Route path="/Profile/Favoritos" element={<Favoritos />} />
           <Route path="/Profile/created" element={<ProfileCEO />} />
+          <Route path="/Kits" element={<Kits />} />
 
           <Route path="/" element={isLoggedIn ? <InicioApp onLogout={handleLogout} /> : <LoginApp onLogin={handleLogin} />} />
         </Routes>

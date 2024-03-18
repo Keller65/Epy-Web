@@ -3,9 +3,8 @@ import { HeaderComponent } from './header/header.jsx';
 import { listaCards, app, Carrusel } from './data.js';
 import { Footer } from './footer/Footer.jsx';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion'
+import { useNavigate, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import '../styles/Inicio.css';
 
 export function InicioApp() {
@@ -78,9 +77,9 @@ export function InicioApp() {
 
   return (
     <React.Fragment>
-      <article className='top-0 left-0 w-full grid place-content-center bg-white py-3 z-50'>
+      {/*<article className='top-0 left-0 w-full grid place-content-center bg-white py-3 z-50'>
         12% de descuento en todos los productos para este verano
-      </article>
+      </article>*/}
       <div className="InicioAppp">
         <header className="menu">
           <aside className='controls'>
@@ -90,62 +89,84 @@ export function InicioApp() {
         </header>
 
         <main className='content-class-sections'>
-          <div>
-            <section id='presentacion-screen'>
-              <div className='flex justify-center items-center flex-col'>
-                {/*<p className='leading-[0]'>Bienvenido {nameUser ? nameUser : 'Visitante'}!</p>*/}
-                {text.map((el, i) => (
-                  <motion.span
-                    className='leading-[0]'
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                      duration: 1.15,
-                      delay: i / 10,
-                    }}
-                    key={i}
-                  >
-                    {el}{" "}
-                  </motion.span>
-                ))}
-                {/*<p className='font-semibold text-marca'>EPY MACKEUP</p>*/}
-                <motion.p
-                  className='font-semibold text-marca opacity-0'
-                  layout
+          <section id='presentacion-screen'>
+            <div className='flex justify-center items-center flex-col'>
+              {text.map((el, i) => (
+                <motion.span
+                  className='leading-[0]'
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, y: 10 }}
+                  animate={{ opacity: 1 }}
                   transition={{
-                    opacity: { ease: "linear" },
-                    layout: { duration: 10 }
+                    duration: 1.15,
+                    delay: i / 10,
                   }}
+                  key={i}
                 >
-                  EPY MACKEUP
-                </motion.p>
-              </div>
+                  {el}{" "}
+                </motion.span>
+              ))}
+              <motion.p
+                className='font-semibold text-marca opacity-0'
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: 10 }}
+                transition={{
+                  opacity: { ease: "linear" },
+                  layout: { duration: 10 }
+                }}
+              >
+                EPY MACKEUP
+              </motion.p>
+            </div>
 
-              <section className='flex gap-4'>
-                <Link to='/Search' className=' bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
-                  Empezar
-                </Link>
+            <section className='flex gap-4'>
+              <Link to='/Search' className=' bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
+                Empezar
+              </Link>
 
-                <button className='bg-[transparent] text-[#000] p-[5px] flex items-center justify-center gap-[2px]'>
-                  ver mas
-                  <img src="assets/chevron.svg" alt="chevron" className='h-[18px] w-[18px]' />
-                </button>
-              </section>
+              <button className='bg-[transparent] text-[#000] p-[5px] flex items-center justify-center gap-[2px]'>
+                ver mas
+                <img src="assets/chevron.svg" alt="chevron" className='h-[18px] w-[18px]' />
+              </button>
             </section>
+          </section>
 
-            <div className="slider">
-              <div className="slide-track">
-                {imagenes.map((imagen, index) => (
-                  <div className="slide" key={index}>
-                    <img src={imagen.src} alt={imagen.alt} className='marcaLogos' />
-                  </div>
-                ))}
-              </div>
+          <div className="slider">
+            <div className="slide-track">
+              {imagenes.map((imagen, index) => (
+                <div className="slide" key={index}>
+                  <img src={imagen.src} alt={imagen.alt} className='marcaLogos' />
+                </div>
+              ))}
             </div>
           </div>
         </main>
+
+        <section className='w-full h-auto flex gap-10 justify-center flex-wrap'>
+          <div className="image-container">
+            <img src="assets/shopping-ilustracion.png" alt="post_ilustracion_shopping" />
+            <div className="overlay flex flex-col">
+              <p className='text-[20px]'>Kits Personalizables</p>
+              <Link to='/Kits' className='text-[15px] underline font-[300]'>comenzar</Link>
+            </div>
+          </div>
+
+          <div className="image-container">
+            <img src="assets/ilustracion-cart.png" alt="post_ilustracion_cart" />
+            <div className="overlay flex flex-col">
+              <p className='text-[20px]'>Descuento Especiales</p>
+              <Link to='/Kits' className='text-[15px] underline font-[300]'>ver descuentos</Link>
+            </div>
+          </div>
+
+          <div className="image-container">
+            <img src="assets/regalos.png" alt="post_ilustracion_ideas" />
+            <div className="overlay flex flex-col">
+              <p className='text-[20px]'>Regalos por Compras</p>
+              <Link to='/Kits' className='text-[15px] underline font-[300]'>obtener regalos</Link>
+            </div>
+          </div>
+        </section>
 
         <section id="seccion-post">
           <img src="/social/PostLogo.webp" alt="post imagen" id='post_img' />
