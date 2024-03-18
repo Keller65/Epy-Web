@@ -1,8 +1,8 @@
-:root{
+:root {
     --Selected: #d9c5ff;
 }
 
-*{
+* {
     font-display: swap;
 }
 
@@ -83,7 +83,7 @@
         width: 35px;
     }
 
-    .btnModal-close{
+    .btnModal-close {
         padding: 10px;
         background-color: transparent;
         size: 10px;
@@ -91,4 +91,22 @@
         z-index: 99;
         size: 5px;
     }
+}
+
+.page-transition-enter {
+    opacity: 0;
+}
+
+.page-transition-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.page-transition-exit {
+    opacity: 1;
+}
+
+.page-transition-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
 }
