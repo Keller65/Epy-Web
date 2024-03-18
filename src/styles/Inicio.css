@@ -314,6 +314,10 @@ body {
         justify-content: center;
     }
 
+    .image-container {
+        width: 100%;
+    }
+
     .InicioAppp {
         height: auto;
         width: 100%;

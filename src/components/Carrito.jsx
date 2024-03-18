@@ -3,7 +3,6 @@ import { HacerPedido } from './data.js';
 import { toast, Toaster } from 'sonner';
 import { Ticket, Tags, ScanBarcode, BadgeDollarSign, Truck, Store, BaggageClaim } from 'lucide-react';
 import '../styles/Shopping.css';
-import '../../public/assets/bolsa.svg';
 
 export function Carrito() {
   const [cartItems, setCartItems] = useState([]);

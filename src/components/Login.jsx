@@ -65,7 +65,7 @@ export function LoginApp() {
       <form className="Formulario">
         <button className="LoginBTN" onClick={handleSignInWithGoogle}>
           <img
-            src="google.svg"
+            src="assets/google.svg"
             alt="google img"
             className="GoogleImg"
           />
@@ -74,7 +74,7 @@ export function LoginApp() {
 
         <button className="FacebookBTN" onClick={handleSignInWithFacebook}>
           <img
-            src="facebook.svg"
+            src="assets/facebook.svg"
             alt="facebook img"
             className="FacebookImg"
           />
