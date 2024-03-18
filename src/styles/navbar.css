@@ -1,8 +1,8 @@
-:root {
+:root{
     --Selected: #d9c5ff;
 }
 
-* {
+*{
     font-display: swap;
 }
 
@@ -11,7 +11,7 @@
     gap: 20px;
     height: 60px;
     display: flex;
-    flex-wrap: wrapyy;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -27,14 +27,9 @@
     border-radius: 10px;
 }
 
-.icon-img {
-    height: 25px;
-    width: 25px;
-    cursor: pointer;
-}
-
 .modal {
     background-color: rgba(241, 241, 241, 0.308);
+    backdrop-filter: blur(1px);
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -58,11 +53,10 @@
 
 @media (max-width: 450px) {
     .navbar {
-        display: flex;
+        position: fixed;
         height: auto;
         width: 100%;
-        background-color: #fffcf7;
-        position: fixed;
+        background-color: rgba(255, 252, 247, 0.7);
         left: 0;
         bottom: 0;
         gap: 20px;
@@ -83,7 +77,7 @@
         width: 35px;
     }
 
-    .btnModal-close {
+    .btnModal-close{
         padding: 10px;
         background-color: transparent;
         size: 10px;
@@ -91,22 +85,4 @@
         z-index: 99;
         size: 5px;
     }
-}
-
-.page-transition-enter {
-    opacity: 0;
-}
-
-.page-transition-enter-active {
-    opacity: 1;
-    transition: opacity 300ms ease-in;
-}
-
-.page-transition-exit {
-    opacity: 1;
-}
-
-.page-transition-exit-active {
-    opacity: 0;
-    transition: opacity 300ms ease-in;
 }

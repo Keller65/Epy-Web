@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --Poppins: 'Poppins', sans-serif; 
+    --Poppins: 'Poppins', sans-serif;
     --Font: "Orator W01", "Microsoft YaHei", 微软雅黑, "PingFang SC", 萍方, "Noto Sans", SimHei, 黑体, "Gill Sans", "Gill Sans MT", Calibri, serif;
 }
 
@@ -16,6 +16,7 @@
 .ShoppingApp {
     padding: 10px;
     width: 40%;
+    height: auto;
     background-color: #fffcf7;
     position: relative;
     overflow: hidden;
@@ -276,11 +277,11 @@ li p {
     padding: 10px;
 }
 
-.icono__whatsapp{
+.icono__whatsapp {
     height: 30px;
 }
 
-#whatsapp__button{
+#whatsapp__button {
     background-color: #c3ffb7;
     color: rgb(25, 173, 25);
     display: flex;
@@ -296,10 +297,10 @@ li p {
 @media (max-width: 450px) {
     .ShoppingApp {
         width: 100%;
-        height: 100%;
+        height: 100vh;
     }
 
-    #payment-container{
+    #payment-container {
         position: fixed;
     }
 
