@@ -157,12 +157,12 @@ export function Carrito() {
         <main id='container-entregas' >
 
           <button type='button' value={"Entrega incluida"} className="cardEntrega" onClick={Entregas}>
-            <Truck className='icon-truck' size={40} />
+            <img src='assets/delivery.svg' alt='image delivery truck' className='h-[50px]'/>
             Entrega incluida
           </button>
 
           <button type='button' value={"Recojer en tienda"} className="cardEntrega" onClick={Entregas}>
-            <Store className='icon-truck' size={40} />
+            <img src='assets/store.png' alt='image store' className='h-[50px]'/>
             Recoger en tienda
           </button>
 
