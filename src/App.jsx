@@ -8,6 +8,7 @@ import Profile from "./components/Profile/Profile.jsx";
 import { Loading } from "./components/Loading.jsx";
 const Favoritos = lazy(() => import('./components/Profile/Favoritos/Page.jsx'));
 import { ProfileCEO } from "./components/Profile/CEO.jsx";
+import { Kits } from './components/Kits-Personalizables/Kits.jsx';
 import './index.css';
 
 export function App() {
@@ -24,7 +25,7 @@ export function App() {
   return (
     <React.Fragment>
 
-      <Suspense fallback ={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<LoginApp />} />
           <Route path="/Home" element={<InicioApp />} />

@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { HeaderComponent } from './header/header.jsx';
 import { listaCards, app, Carrusel } from './data.js';
 import { Footer } from './footer/Footer.jsx';
-import { Paletas } from './Paletas/Paletas.jsx';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -79,6 +78,9 @@ export function InicioApp() {
 
   return (
     <React.Fragment>
+      <article className='top-0 left-0 w-full grid place-content-center bg-white py-3 z-50'>
+        12% de descuento en todos los productos para este verano
+      </article>
       <div className="InicioAppp">
         <header className="menu">
           <aside className='controls'>
@@ -128,7 +130,7 @@ export function InicioApp() {
 
                 <button className='bg-[transparent] text-[#000] p-[5px] flex items-center justify-center gap-[2px]'>
                   ver mas
-                  <img src="chevron.svg" alt="chevron" className='h-[18px] w-[18px]' />
+                  <img src="assets/chevron.svg" alt="chevron" className='h-[18px] w-[18px]' />
                 </button>
               </section>
             </section>
@@ -177,7 +179,6 @@ export function InicioApp() {
 
         </section>
       </div>
-      <Paletas />
       <section id='promociones'>
         <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2FBase%20SKIN%20(1).webp?alt=media&token=106f1804-3979-4172-a6ab-b5e7ba19e3c9" alt="" />
         <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2Fcushion%20Sephora%20(1).webp?alt=media&token=2b91e1ac-d2c2-4428-b4bb-c354f160eaba" alt="" />

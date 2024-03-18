@@ -57,7 +57,7 @@ export function Navbar() {
                 </Link>
 
                 <div className='icon' onClick={openModal}>
-                    <img src="/bolsa.svg" alt="" className='icon-img' />
+                    <img src="assets/bolsa.svg" alt="" className='icon-img' />
                 </div>
 
                 <Link to="/Profile" className='icon' onClick={()=> navigate('/Profile')}>

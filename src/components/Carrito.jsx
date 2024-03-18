@@ -3,7 +3,7 @@ import { HacerPedido } from './data.js';
 import { toast, Toaster } from 'sonner';
 import { Ticket, Tags, ScanBarcode, BadgeDollarSign, Truck, Store, BaggageClaim } from 'lucide-react';
 import '../styles/Shopping.css';
-import '../../public/bolsa.svg';
+import '../../public/assets/bolsa.svg';
 
 export function Carrito() {
   const [cartItems, setCartItems] = useState([]);
@@ -101,7 +101,7 @@ export function Carrito() {
 
       <div className='conatiner-view' onClick={handleToggleAccordion}>
         <p id='ver-productos-btn'>Ver Productos</p>
-        <img src="/leftIcon.svg" alt="icon" className='leftIcon' style={{ transform: isContainerClicked ? 'rotate(90deg)' : 'rotate(0)', transition: 'transform 470ms ease' }} />
+        <img src="assets/leftIcon.svg" alt="icon" className='leftIcon' style={{ transform: isContainerClicked ? 'rotate(90deg)' : 'rotate(0)', transition: 'transform 470ms ease' }} />
       </div>
 
       <main className='container-products' style={containerStyle}>
@@ -122,7 +122,7 @@ export function Carrito() {
 
                 <button id='Btn-delte' onClick={() => handleDeleteItem(item.id)}>
                   Eliminar
-                  <img src='/trash.svg' alt='trash' id='trashSVG' />
+                  <img src='assets/trash.svg' alt='trash' id='trashSVG' />
                 </button>
               </div>
             ))
