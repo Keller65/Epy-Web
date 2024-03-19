@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --FontElegant: 'Nanum Myeongjo', serif;
     --Spacing: 2px;
-    --FontAwesone: Helvetica W01, Microsoft YaHei, 微软雅黑, SimHei, 黑体, PingFang SC, 萍方, Noto Sans, sans-serif;
 }
 
 * {

@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 :root {
-    --Poppins: 'Poppins', sans-serif;
-    --Font: "Orator W01", "Microsoft YaHei", 微软雅黑, "PingFang SC", 萍方, "Noto Sans", SimHei, 黑体, "Gill Sans", "Gill Sans MT", Calibri, serif;
+    --Font: 'Poppins', sans-serif;
 }
 
 * {

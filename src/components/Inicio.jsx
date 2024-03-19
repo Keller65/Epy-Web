@@ -157,7 +157,7 @@ export function InicioApp() {
 
         <section className='w-full h-auto flex gap-10 justify-center flex-wrap' style={{ opacity: opacity / 500 }}>
           <div className="image-container">
-            <img src="assets/shopping-ilustracion.png" alt="post_ilustracion_shopping" />
+            <img src="assets/shopping-ilustracion.webp" alt="post_ilustracion_shopping" loading='lazy' />
             <div className="overlay flex flex-col">
               <p className='text-[20px]'>Kits Personalizables</p>
               <Link to='/Kits' className='text-[15px] underline font-[300]'>comenzar</Link>
@@ -165,7 +165,7 @@ export function InicioApp() {
           </div>
 
           <div className="image-container">
-            <img src="assets/ilustracion-cart.png" alt="post_ilustracion_cart" />
+            <img src="assets/ilustracion-cart.webp" alt="post_ilustracion_cart" loading='lazy' />
             <div className="overlay flex flex-col">
               <p className='text-[20px]'>Descuento Especiales</p>
               <Link to='/Kits' className='text-[15px] underline font-[300]'>ver descuentos</Link>
@@ -173,7 +173,7 @@ export function InicioApp() {
           </div>
 
           <div className="image-container">
-            <img src="assets/regalos.png" alt="post_ilustracion_ideas" />
+            <img src="assets/regalos.webp" alt="post_ilustracion_ideas" loading='lazy' />
             <div className="overlay flex flex-col">
               <p className='text-[20px]'>Regalos por Compras</p>
               <Link to='/Kits' className='text-[15px] underline font-[300]'>obtener regalos</Link>
@@ -184,7 +184,7 @@ export function InicioApp() {
         <section id="seccion-post" className='flex'>
           <img src="assets/post_aplicacion.png" alt="post imagen" className='post_img' />
           <div className='flex gap-3 flex-col'>
-            <img src="assets/amigos_regalos.png" alt="post regalos" className='w-[425px] h-auto aspect-auto grayscale-[100%] hover:grayscale-0 transition-all' />
+            <img src="assets/amigos_regalos.webp" alt="post regalos" className='w-[425px] h-auto aspect-auto grayscale-[100%] hover:grayscale-0 transition-all' />
             <img src="assets/woman_ilustracion.png" alt="post woman" className='w-[425px] h-auto aspect-auto grayscale-[100%] hover:grayscale-0 transition-all' />
           </div>
         </section>
