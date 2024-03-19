@@ -16,5 +16,5 @@ html {
 }
 
 #root {
-    background-image: radial-gradient(100% 10% at 10% 2%, rgb(255 187 0 / 14%) 0, rgba(0, 163, 255, 0) 50%, rgba(0, 163, 255, 0) 100%);
+    background-image: radial-gradient(100% 10% at 0% 0%, rgb(255 187 0 / 14%) 0, rgba(0, 163, 255, 0) 50%, rgba(0, 163, 255, 0) 100%);
 }
