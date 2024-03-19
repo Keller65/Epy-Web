@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { HacerPedido } from './data.js';
 import { toast, Toaster } from 'sonner';
-import { Ticket, Tags, ScanBarcode, BadgeDollarSign, Truck, Store, BaggageClaim } from 'lucide-react';
+import { Ticket, Tags, ScanBarcode, BadgeDollarSign, BaggageClaim } from 'lucide-react';
 import '../styles/Shopping.css';
 
 export function Carrito() {
@@ -115,7 +115,7 @@ export function Carrito() {
                 <aside className='container_information'>
                   <div className='conatiner-arriba'>
                     <p id='nombre'>{item.nombre}</p>
-                    <p id='total'>L. {item.precio.toFixed(0)}</p>
+                    <p id='total'>L. {item.precio.toFixed(2)}</p>
                   </div>
                 </aside>
 
@@ -157,12 +157,12 @@ export function Carrito() {
         <main id='container-entregas' >
 
           <button type='button' value={"Entrega incluida"} className="cardEntrega" onClick={Entregas}>
-            <img src='assets/delivery.svg' alt='image delivery truck' className='h-[50px]'/>
+            <img src='assets/delivery.svg' alt='image delivery truck' className='h-[50px] w-auto aspect-auto' />
             Entrega incluida
           </button>
 
           <button type='button' value={"Recojer en tienda"} className="cardEntrega" onClick={Entregas}>
-            <img src='assets/store.png' alt='image store' className='h-[50px]'/>
+            <img src='assets/store.png' alt='image store' className='h-[50px] w-auto aspect-auto' />
             Recoger en tienda
           </button>
 
