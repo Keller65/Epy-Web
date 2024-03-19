@@ -15,6 +15,7 @@ export function InicioApp() {
   const [user, setUser] = useState(null);
   const [userCountry, setUserCountry] = useState(null);
   const [imagenes, setImagenes] = useState([]);
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
     const cargarImagenes = async () => {
@@ -73,6 +74,18 @@ export function InicioApp() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const newOpacity = scrollPosition;
+      setOpacity(newOpacity);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const text = `Bienvenido ${nameUser ? nameUser : 'Visitante'}!`.split("  ");
 
   return (
@@ -105,21 +118,21 @@ export function InicioApp() {
                   {el}{" "}
                 </motion.span>
               ))}
-              <motion.p
-                className='font-semibold text-marca opacity-0'
+              <motion.div
+                className='font-semibold text-marca opacity-0 flex gap-[18px]'
                 layout
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, y: 10 }}
                 transition={{
                   opacity: { ease: "linear" },
-                  layout: { duration: 10 }
+                  layout: { duration: 2 }
                 }}
               >
-                EPY MACKEUP
-              </motion.p>
+                EPY <p className='text_gradient'>MACKEUP</p>
+              </motion.div>
             </div>
 
-            <section className='flex gap-4'>
+            <section className='flex gap-4 mt-6'>
               <Link to='/Search' className=' bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
                 Empezar
               </Link>
@@ -142,7 +155,7 @@ export function InicioApp() {
           </div>
         </main>
 
-        <section className='w-full h-auto flex gap-10 justify-center flex-wrap'>
+        <section className='w-full h-auto flex gap-10 justify-center flex-wrap' style={{ opacity: opacity / 500 }}>
           <div className="image-container">
             <img src="assets/shopping-ilustracion.png" alt="post_ilustracion_shopping" />
             <div className="overlay flex flex-col">
@@ -168,8 +181,12 @@ export function InicioApp() {
           </div>
         </section>
 
-        <section id="seccion-post">
-          <img src="/social/PostLogo.webp" alt="post imagen" id='post_img' />
+        <section id="seccion-post" className='flex'>
+          <img src="assets/post_aplicacion.png" alt="post imagen" className='post_img' />
+          <div className='flex gap-3 flex-col'>
+            <img src="assets/amigos_regalos.png" alt="post regalos" className='w-[425px] h-auto aspect-auto grayscale-[100%] hover:grayscale-0 transition-all' />
+            <img src="assets/woman_ilustracion.png" alt="post woman" className='w-[425px] h-auto aspect-auto grayscale-[100%] hover:grayscale-0 transition-all' />
+          </div>
         </section>
 
         <section id='ediciones'>
@@ -210,7 +227,6 @@ export function InicioApp() {
         <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2Fkiko%20milano%20Labial%20(2).png?alt=media&token=5f9b94b0-3012-4efc-9c2f-554cf7d735ed" alt="" />
       </section>
       <Footer />
-      {/*{user ? '' : <LoginModal />}*/}
     </React.Fragment>
   );
 }

@@ -174,7 +174,7 @@ const Profile = () => {
                         <WalletCards size={20} stroke="#b19a61" />
                     </div>
 
-                    {formattedBills ? "$ " + formattedBills : '0.00'}
+                    ${formattedBills ? formattedBills : '0.00'}
                 </div>
 
                 <div className="container__regalos">
