@@ -133,7 +133,7 @@ export function InicioApp() {
             </div>
 
             <section className='flex gap-4 mt-6'>
-              <Link to='/Search' className=' bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
+              <Link to='/Search' title='Ir al Buscador de productos' aria-description='' className='bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
                 Empezar
               </Link>
 
@@ -148,7 +148,7 @@ export function InicioApp() {
             <div className="slide-track">
               {imagenes.map((imagen, index) => (
                 <div className="slide" key={index}>
-                  <img src={imagen.src} alt={imagen.alt} className='marcaLogos' />
+                  <img width="80" height="50" src={imagen.src} alt={imagen.alt} className='h-[80px] w-50px aspect-[80/50]' />
                 </div>
               ))}
             </div>
@@ -157,7 +157,7 @@ export function InicioApp() {
 
         <section className='w-full h-auto flex gap-10 justify-center flex-wrap' style={{ opacity: opacity / 500 }}>
           <div className="image-container">
-            <img src="assets/shopping-ilustracion.webp" alt="post_ilustracion_shopping" loading='lazy' />
+            <img className='image-cover w-[320px] h-[237px] aspect-[320/237]' src="assets/shopping-ilustracion.webp" alt="post_ilustracion_shopping" loading='lazy' />
             <div className="overlay flex flex-col">
               <p className='text-[20px]'>Kits Personalizables</p>
               <Link to='/Kits' className='text-[15px] underline font-[300]'>comenzar</Link>
@@ -165,7 +165,7 @@ export function InicioApp() {
           </div>
 
           <div className="image-container">
-            <img src="assets/ilustracion-cart.webp" alt="post_ilustracion_cart" loading='lazy' />
+            <img className='image-cover w-[320px] h-[237px] aspect-[320/237]' src="assets/ilustracion-cart.webp" alt="post_ilustracion_cart" loading='lazy' />
             <div className="overlay flex flex-col">
               <p className='text-[20px]'>Descuento Especiales</p>
               <Link to='/Kits' className='text-[15px] underline font-[300]'>ver descuentos</Link>
@@ -173,7 +173,7 @@ export function InicioApp() {
           </div>
 
           <div className="image-container">
-            <img src="assets/regalos.webp" alt="post_ilustracion_ideas" loading='lazy' />
+            <img className='image-cover w-[320px] h-[237px] aspect-[320/237]' src="assets/regalos.webp" alt="post_ilustracion_ideas" loading='lazy' />
             <div className="overlay flex flex-col">
               <p className='text-[20px]'>Regalos por Compras</p>
               <Link to='/Kits' className='text-[15px] underline font-[300]'>obtener regalos</Link>

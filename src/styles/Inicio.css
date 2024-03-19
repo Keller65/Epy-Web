@@ -95,13 +95,6 @@ body {
     height: 30px;
 }
 
-.marcaLogos {
-    height: 50px;
-    cursor: pointer;
-    width: auto;
-    margin: 0 120px;
-}
-
 @-webkit-keyframes scroll {
     0% {
         -webkit-transform: translateX(0);
@@ -304,6 +297,12 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.image-container {
+    width: 320px;
+    height: auto;
+    background-color: #FFC52F;
 }
 
 @media (max-width: 450px) {

@@ -9,7 +9,7 @@ export function HeaderComponent() {
         <nav className="header">
             <Navbar />
             <div className="userContact">
-                <img src={foto} alt="" className='FotoUser' />
+                <img src={foto} alt="foto de perfil" className='FotoUser' />
 
                 <div className="contact">
                     <p id='name'>{localStorage.getItem("nameuser")}</p>
