@@ -27,7 +27,7 @@ export function BuscadorApp() {
     if (searchTermFromUrl) {
       setSearchTerm(searchTermFromUrl);
     }
-  }, [navigate, location.search]);
+  }, [navigate]);
 
   const SubmitForm = (e) => {
     e.preventDefault();

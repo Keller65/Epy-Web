@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HeaderComponent } from './header/header.jsx';
 import { listaCards, app, Carrusel } from './data.js';
 import { Footer } from './footer/Footer.jsx';
@@ -12,8 +12,8 @@ export function InicioApp() {
   const foto = localStorage.getItem("photoUser");
   const navigate = useNavigate();
   const auth = getAuth(app);
-  const [user, setUser] = useState(null);
-  const [userCountry, setUserCountry] = useState(null);
+  const [, setUser] = useState(null);
+  const [, setUserCountry] = useState(null);
   const [imagenes, setImagenes] = useState([]);
   const [opacity, setOpacity] = useState(0);
 

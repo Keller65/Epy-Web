@@ -13,6 +13,7 @@ export const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+export const DATBASE_NODE = import.meta.env.VITE_NODE_DATABASE;
 
 export async function HacerPedido(cartItems) {
   const nombre = localStorage.getItem("nameuser");
@@ -64,7 +65,7 @@ export async function Carrusel() {
   }
 }
 
-async function descargarProductos() {
+/*async function descargarProductos() {
   try {
     const productosRef = collection(db, 'Productos');
     const snapshot = await getDocs(productosRef);
@@ -93,6 +94,6 @@ async function descargarProductos() {
   } catch (error) {
     console.error('Error al descargar la colección de productos:', error);
   }
-}
+}*/
 
 //descargarProductos();

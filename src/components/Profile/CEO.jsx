@@ -1,6 +1,6 @@
 import { HeaderComponent } from '../header/header';
 import { BadgeCheck } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { getDatabase, set, ref, onValue, remove } from "firebase/database";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from '../data';
@@ -13,19 +13,7 @@ export function ProfileCEO() {
 
     const auth = getAuth(app);
 
-    useEffect(() => {
-        const unsubscriber = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                GetFollowers();
-            } else {
-                console.log('No estás autenticado');
-            }
-        });
-
-        return () => unsubscriber();
-    }, [auth]);
-
-    const GetFollowers = () => {
+    const GetFollowers = useCallback(() => {
         const databaseFollowers = getDatabase(app);
         const path = ref(databaseFollowers, 'followers');
         const uid = auth.currentUser ? auth.currentUser.uid : null;
@@ -44,7 +32,19 @@ export function ProfileCEO() {
             const totalFollowers = followersData ? Object.keys(followersData).length : 0;
             setTotalFollowers(totalFollowers);
         });
-    };
+    }, [auth.currentUser]);
+
+    useEffect(() => {
+        const unsubscriber = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                GetFollowers();
+            } else {
+                console.log('No estás autenticado');
+            }
+        });
+
+        return () => unsubscriber();
+    }, [auth, GetFollowers]);
 
     const followUser = () => {
         const uid = auth.currentUser ? auth.currentUser.uid : null;

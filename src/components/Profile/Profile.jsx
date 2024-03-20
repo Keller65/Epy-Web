@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { HeaderComponent } from "../header/header";
 import { BadgeCheck, ChevronRight, Heart, WalletCards, MessagesSquare } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
@@ -6,8 +6,7 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getDatabase, ref, onValue } from "firebase/database";
 import { app } from "../data";
 import './Profile.css';
-
-export const DATBASE_NODE = import.meta.env.VITE_NODE_DATABASE;
+import { DATBASE_NODE } from '../data.js';
 
 const GetStories = (callback) => {
     const database = getDatabase(app);
@@ -27,7 +26,9 @@ const GetStories = (callback) => {
 const Profile = () => {
     const auth = getAuth(app);
     const navigate = useNavigate();
-    const favoritosFromStorage = JSON.parse(localStorage.getItem('Favoritos')) || [];
+    //const favoritosFromStorage = JSON.parse(localStorage.getItem('Favoritos')) || [];
+    const favoritosFromStorage = useMemo(() => JSON.parse(localStorage.getItem('Favoritos')) || [], []);
+
     const bills = localStorage.getItem('gastos');
     const formattedBills = parseFloat(bills).toLocaleString();
 
@@ -230,7 +231,7 @@ const Profile = () => {
                         ""
                     )}
             </div>
-            
+
         </React.Fragment>
     );
 };

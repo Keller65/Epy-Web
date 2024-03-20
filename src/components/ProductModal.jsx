@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Toaster, toast } from 'sonner';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import '../styles/ProductModal.css';
@@ -62,28 +62,6 @@ const ProductModal = ({ producto, cerrarModal }) => {
 
       return nuevosFavoritos;
     });
-  };
-
-  const carruselRef = useRef(null);
-  const [scrollInterval, setScrollInterval] = useState(null);
-
-  const startScroll = (direction) => {
-    stopScroll();
-    const interval = setInterval(() => {
-      if (carruselRef.current) {
-        const { scrollLeft } = carruselRef.current;
-        const scrollAmount = direction === 'left' ? -20 : 20;
-        carruselRef.current.scrollTo({ left: scrollLeft + scrollAmount });
-      }
-    }, 100);
-    setScrollInterval(interval);
-  };
-
-  const stopScroll = () => {
-    if (scrollInterval) {
-      clearInterval(scrollInterval);
-      setScrollInterval(null);
-    }
   };
 
   return (
@@ -158,6 +136,7 @@ const ProductModal = ({ producto, cerrarModal }) => {
 
 ProductModal.propTypes = {
   producto: PropTypes.shape({
+    key: PropTypes.string.isRequired,
     imagenProduct: PropTypes.string.isRequired,
     tonoImage: PropTypes.string,
     producto: PropTypes.string.isRequired,
