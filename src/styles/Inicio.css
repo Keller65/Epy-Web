@@ -184,55 +184,10 @@ body {
     width: 100%;
 }
 
-#ediciones {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-#carruselSection-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 40px;
-    width: 45%;
-}
-
 .card {
     height: fit-content;
     display: flex;
     flex-direction: column;
-}
-
-.container_imagenes {
-    position: relative;
-}
-
-.presentacion-img {
-    height: 200px;
-    width: 200px;
-    background-color: rgba(236, 236, 236, 0.63);
-}
-
-.imagenHover {
-    display: none;
-    height: 20px;
-}
-
-.presentacion-img:active+.imagenHover {
-    content: "";
-    height: 200px;
-    width: 200px;
-    background-color: #ffffff;
-    position: absolute;
-    display: grid;
-    place-content: center;
-    top: 0;
-    padding: 20px;
-    cursor: pointer;
 }
 
 #promociones {
@@ -416,46 +371,7 @@ body {
         display: none;
     }
 
-    #ediciones {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-        height: 70vh;
-    }
-
-    #carruselSection-cards {
-        gap: 5px;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .zahaIMG {
-        display: none;
-    }
-
     .card {
-        width: 164px;
-        user-select: none;
-    }
-
-    .makeUp_Ilustracion_picture {
-        height: 164px;
-        width: 164px;
-        user-select: none;
-    }
-
-    .presentacion-img {
-        height: 100%;
-        background-color: rgba(236, 236, 236, 0.63);
-        user-select: none;
-    }
-
-    .presentacion-img:hover+.imagenHover {
-        height: 164px;
         width: 164px;
         user-select: none;
     }

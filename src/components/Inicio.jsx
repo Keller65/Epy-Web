@@ -133,8 +133,8 @@ export function InicioApp() {
             </div>
 
             <section className='flex gap-4 mt-6'>
-              <Link to='/Search' title='Ir al Buscador de productos' aria-description='' className='bg-[#FFE4B6] text-[#F0B249] py-[5px] px-[12px]'>
-                Empezar
+              <Link to='/Search' title='Ir al Buscador de productos' aria-description='' className='bg-[#ffefd3] text-[#4b3816] py-[5px] px-[12px]'>
+                Buscar Productos
               </Link>
 
               <button className='bg-[transparent] text-[#000] p-[5px] flex items-center justify-center gap-[2px]'>
@@ -189,33 +189,20 @@ export function InicioApp() {
           </div>
         </section>
 
-        <section id='ediciones'>
+        <div className='w-full flex gap-4 justify-center flex-wrap'>
+          {listaCards.map((card, index) => (
+            <div key={index} className="h-fit w-[200px] aspect-[1]">
+              <picture className='rounded-[10px]'>
+                <img className='h-[200px] w-[200px] aspect-[1]' src={card.imagen} alt={`imagen ${card.titulo}`} loading='lazy' />
+              </picture>
 
-          <div className='makeUp_Ilustracion_picture'>
-            <img src="/marcas/Zaha.webp" alt="" className='zahaIMG' />
-          </div>
+              <section className='buttons'>
+                <p className="priceCard">${card.price}</p>
+              </section>
+            </div>
+          ))}
+        </div>
 
-          <div id='carruselSection-cards'>
-            {listaCards.map((card, index) => (
-
-              <div key={index} className="card">
-                <picture className='container_imagenes'>
-                  <img src={card.imagen} alt={`imagen ${card.titulo}`} className='presentacion-img' loading='lazy' />
-
-                  <picture className='imagenHover'>
-                    <img src={card.marca} alt='marca imagen hover' />
-                  </picture>
-                </picture>
-
-                <section className='buttons'>
-                  <p className="priceCard">${card.price}</p>
-                </section>
-              </div>
-
-            ))}
-          </div>
-
-        </section>
       </div>
       <section id='promociones'>
         <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2FBase%20SKIN%20(1).webp?alt=media&token=106f1804-3979-4172-a6ab-b5e7ba19e3c9" alt="" />
