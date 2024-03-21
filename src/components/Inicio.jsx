@@ -153,7 +153,7 @@ export function InicioApp() {
             <div className="slide-track">
               {imagenes.map((imagen, index) => (
                 <div className="slide" key={index}>
-                  <img width="80" height="50" src={imagen.src} alt={imagen.alt} className='h-[80px] w-50px aspect-[80/50]' />
+                  <img width="80" height="50" src={imagen.src} alt={imagen.alt} className='h-[80px] w-50px aspect-[80/50]' loading='lazy' />
                 </div>
               ))}
             </div>
