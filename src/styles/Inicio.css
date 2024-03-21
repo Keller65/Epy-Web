@@ -50,17 +50,13 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin: 80px 0;
-    position: relative;
-    border-radius: 5px;
+    margin: 40px 0;
     gap: 10px;
 }
 
-#post_img {
+.post_img {
     width: auto;
     height: 100%;
-    aspect-ratio: 16/9;
-    object-fit: contain;
 }
 
 .menu {
@@ -190,24 +186,6 @@ body {
     flex-direction: column;
 }
 
-#promociones {
-    width: 62%;
-    margin: auto;
-    height: 20rem;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 15px;
-    overflow: hidden;
-    overflow-x: scroll;
-}
-
-.imagen_producto_promocion {
-    height: 100%;
-    width: auto;
-}
-
 .text-marca {
     font-size: 4em;
     margin-top: -10px;
@@ -260,11 +238,45 @@ body {
     background-color: #FFC52F;
 }
 
-@media (max-width: 450px) {
-    #promociones {
-        width: 100%;
-    }
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
 
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #6f00ff;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #6f00ff transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 450px) {
     .makeUp-temporada {
         height: 100vh;
         display: flex;

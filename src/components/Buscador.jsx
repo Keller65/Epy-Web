@@ -53,7 +53,7 @@ export function BuscadorApp() {
 
       <form onSubmit={SubmitForm} id="form">
         <span className="lupa-icon">
-          <Search strokeWidth="1.7" stroke="gray" />
+          <Search size={20} strokeWidth="1.7" stroke="gray" />
         </span>
         <input
           type="text"
@@ -69,10 +69,10 @@ export function BuscadorApp() {
       </form>
 
       <form name="formuario__filtros" className="filtros" onSubmit={(e) => e.preventDefault()}>
-        <button type="button" className="filter" onClick={() => onclickFilter('Rostro')}>Rostro</button>
-        <button type="button" className="filter" onClick={() => onclickFilter('Cejas')}>Cejas</button>
-        <button type="button" className="filter" onClick={() => onclickFilter('Labial')}>Labial</button>
-        <button type="button" className="filter" onClick={() => onclickFilter('Pestañas')}>Pestañas</button>
+        <button type="button" className={selectedFilter === 'Rostro' ? 'filterSelected bg-black text-white' : 'filter'} onClick={() => onclickFilter('Rostro')}>Rostro</button>
+        <button type="button" className={selectedFilter === 'Cejas' ? 'filterSelected bg-black text-white' : 'filter'} onClick={() => onclickFilter('Cejas')}>Cejas</button>
+        <button type="button" className={selectedFilter === 'Labial' ? 'filterSelected bg-black text-white' : 'filter'} onClick={() => onclickFilter('Labial')}>Labial</button>
+        <button type="button" className={selectedFilter === 'Pestañas' ? 'filterSelected bg-black text-white' : 'filter'} onClick={() => onclickFilter('Pestañas')}>Pestañas</button>
       </form>
 
       <ProductosDB searchTerm={searchTerm} filter={selectedFilter} />

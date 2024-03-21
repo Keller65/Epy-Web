@@ -51,7 +51,6 @@ export function Pedidos() {
         console.log('El usuario está autenticado');
         const userName = localStorage.getItem('nameuser');
 
-        // Verificar si el usuario ha cambiado su estado de autenticación
         if (isUserAuthenticated !== userAuthenticated.current) {
           const orders = await fetchUserOrders(userName);
           setUserOrders(orders);
@@ -116,6 +115,7 @@ export function Pedidos() {
                   <div className="poppoup">
                     <CalendarDays fill="#FFE7D6" stroke="#EA7E30" size={20} />
                   </div>
+                  
                 </header>
 
                 <div className="mapa">

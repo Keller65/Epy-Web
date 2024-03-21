@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --Spacing: 2px;
+    --Spacing: 0;
 }
 
 * {
@@ -91,20 +91,12 @@ body {
 }
 
 .filterSelected {
-    background-color: #fff2e4;
     padding: 3px 15px;
+    height: auto;
     font-size: 13px;
-    border-radius: 20px;
     transition: ease-in 120ms;
     cursor: pointer;
-    color: #AAAAAA;
-    border-radius: 10px;
-}
-
-.recomendaciones {
-    height: 60px;
-    width: 100%;
-    background-color: #AAAAAA;
+    border-radius: 5px;
 }
 
 @media (max-width: 450px) {

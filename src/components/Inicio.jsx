@@ -16,6 +16,7 @@ export function InicioApp() {
   const [, setUserCountry] = useState(null);
   const [imagenes, setImagenes] = useState([]);
   const [opacity, setOpacity] = useState(0);
+  const [like, setLike] = useState(false)
 
   useEffect(() => {
     const cargarImagenes = async () => {
@@ -88,6 +89,10 @@ export function InicioApp() {
 
   const text = `Bienvenido ${nameUser ? nameUser : 'Visitante'}!`.split("  ");
 
+  const liked = ()=> {
+    setLike(!like)
+  }
+
   return (
     <React.Fragment>
       {/*<article className='top-0 left-0 w-full grid place-content-center bg-white py-3 z-50'>
@@ -137,10 +142,10 @@ export function InicioApp() {
                 Buscar Productos
               </Link>
 
-              <button className='bg-[transparent] text-[#000] p-[5px] flex items-center justify-center gap-[2px]'>
+              <a href='#products' className='bg-[transparent] text-[#000] p-[5px] flex items-center justify-center gap-[2px]'>
                 ver mas
                 <img src="assets/chevron.svg" alt="chevron" className='h-[18px] w-[18px]' />
-              </button>
+              </a>
             </section>
           </section>
 
@@ -181,6 +186,45 @@ export function InicioApp() {
           </div>
         </section>
 
+        <section className='w-full flex gap-4 my-4 overflow-hidden overflow-x-scroll justify-center flex-wrap'>
+          <div id='products' className="w-full flex items-center justify-center gap-2 pt-10">
+            <img src="assets/sparkle.svg" alt="sparkle.svg" className='' />
+            <h1 className='text-xl'>Productos en Promocion</h1>
+          </div>
+          {listaCards.map((card, index) => (
+            <div key={index} className="flex flex-col w-[200px] h-fit"> {/*e7f6ff*/}
+              <picture className='h-fit w-[200px] bg-[#fffaee] flex items-center justify-center aspect-video'>
+                <img className='h-[150px] w-[150px]' src={card.imagen} alt={`imagen ${card.titulo}`} loading='lazy' />
+              </picture>
+
+              <section className='w-full flex flex-col gap-[12px]'>
+                <div className='flex flex-col gap-[3px]'>
+                  <p className='font-semibold text-[18px]'>{card.marca}</p>
+                  <p className='text-[12px] text-[#b9b9b9] leading-3 text-pretty fon'>{card.edition}</p>
+                </div>
+
+                <div className='flex items-center justify-between'>
+                  <div className="tooltip">
+                    <p>L.{(card.price - card.descuento).toFixed(0)}</p>
+                    <span className="tooltiptext">Antes L.{(card.price).toFixed(0)}</span>
+                  </div>
+                  
+                  <svg onClick={liked} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clipPath="url(#clip0_153_33)">
+                      <path fill={like === true ? 'black' : 'transparent'} stroke="black" strokeWidth="1.5" d="M12 20.25C12 20.25 2.625 15 2.625 8.62501C2.625 7.49803 3.01546 6.40585 3.72996 5.53431C4.44445 4.66277 5.43884 4.0657 6.54393 3.84468C7.64903 3.62366 8.79657 3.79235 9.79131 4.32204C10.7861 4.85174 11.5665 5.70972 12 6.75001C12.4335 5.70972 13.2139 4.85174 14.2087 4.32204C15.2034 3.79235 16.351 3.62366 17.4561 3.84468C18.5612 4.0657 19.5555 4.66277 20.27 5.53431C20.9845 6.40585 21.375 7.49803 21.375 8.62501C21.375 15 12 20.25 12 20.25Z" strokeLinecap="round" strokeLinejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_153_33">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </section>
+            </div>
+          ))}
+        </section>
+
         <section id="seccion-post" className='flex'>
           <img src="assets/post_aplicacion.png" alt="post imagen" className='post_img' />
           <div className='flex gap-3 flex-col'>
@@ -189,30 +233,7 @@ export function InicioApp() {
           </div>
         </section>
 
-        <div className='w-full flex gap-4 justify-center flex-wrap'>
-          {listaCards.map((card, index) => (
-            <div key={index} className="h-fit w-[200px] aspect-[1]">
-              <picture className='rounded-[10px]'>
-                <img className='h-[200px] w-[200px] aspect-[1]' src={card.imagen} alt={`imagen ${card.titulo}`} loading='lazy' />
-              </picture>
-
-              <section className='buttons'>
-                <p className="priceCard">${card.price}</p>
-              </section>
-            </div>
-          ))}
-        </div>
-
       </div>
-      <section id='promociones'>
-        <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2FBase%20SKIN%20(1).webp?alt=media&token=106f1804-3979-4172-a6ab-b5e7ba19e3c9" alt="" />
-        <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2Fcushion%20Sephora%20(1).webp?alt=media&token=2b91e1ac-d2c2-4428-b4bb-c354f160eaba" alt="" />
-        <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2FGreen%20me%20Kiko%20Milano%20(1).webp?alt=media&token=7ea6445d-134e-4546-8da5-bf5c4524f4e7" alt="" />
-        <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2FAirBush%20(1).webp?alt=media&token=31783803-9ca7-43d5-81ce-cc808c61a925" alt="" />
-        <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2FLabial%20Chanel%20(1).png?alt=media&token=a254ce26-4649-4daa-866c-6c425ea3a39f" alt="" />
-        <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2FKiko%20Milano%20Ultimate%20Stylo%20(1).png?alt=media&token=916b48f7-f0bc-4584-83f6-d140a8b11b3d" alt="" />
-        <img loading='lazy' className='imagen_producto_promocion' src="https://firebasestorage.googleapis.com/v0/b/margie-store.appspot.com/o/promocion%2Fkiko%20milano%20Labial%20(2).png?alt=media&token=5f9b94b0-3012-4efc-9c2f-554cf7d735ed" alt="" />
-      </section>
       <Footer />
     </React.Fragment>
   );
