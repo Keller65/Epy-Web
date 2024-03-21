@@ -57,6 +57,7 @@ body {
 .post_img {
     width: auto;
     height: 100%;
+    aspect-ratio: auto;
 }
 
 .menu {

@@ -28,6 +28,8 @@ li{
 
 #social-icons{
     height: 20px;
+    width: 20px;
+    aspect-ratio: 1;
     cursor: pointer;
 }
 

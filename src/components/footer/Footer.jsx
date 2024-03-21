@@ -9,7 +9,7 @@ export function Footer() {
                 <section className="coordenadas">
                     <ul>
                         <li>
-                            <img src="/social/word.svg" alt="" />
+                            <img src="/social/word.svg" alt="word" />
                             <p>Honduras</p>
                         </li>
                     </ul>
@@ -62,10 +62,10 @@ export function Footer() {
                 </section>
 
                 <aside className="redes">
-                    <img src="/social/whatsapp.svg" alt="" id="social-icons" />
-                    <img src="/social/facebook.svg" alt="" id="social-icons" />
-                    <img src="/social/twitter.svg" alt="" id="social-icons" />
-                    <img src="/social/instagram.svg" alt="" id="social-icons" />
+                    <img src="/social/whatsapp.svg" width='20' height='20' alt="icon whatsapp" id="social-icons" />
+                    <img src="/social/facebook.svg" width='20' height='20' alt="icon facebook" id="social-icons" />
+                    <img src="/social/twitter.svg" width='20' height='20' alt="icon twitter" id="social-icons" />
+                    <img src="/social/instagram.svg" width='20' height='20' alt="icon instagram" id="social-icons" />
                 </aside>
             </footer>
         </React.Fragment>
