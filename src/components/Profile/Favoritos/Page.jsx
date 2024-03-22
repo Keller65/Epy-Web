@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Bookmark, ChevronLeft } from 'lucide-react';
-import { HeaderComponent } from '../../header/header';
+import { Navbar } from '../../Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { Toaster, toast } from 'sonner';
 import './Page.css';
@@ -29,7 +29,9 @@ export default function FavoritosPage() {
 
     return (
         <div className="FavoritosPage">
-            <HeaderComponent />
+            <nav className='w-full flex justify-end'>
+                <Navbar />
+            </nav>
             <section className='section__filter'>
                 <Link to="/Profile">
                     <ChevronLeft size={40} id='exit' strokeWidth={1} />
@@ -42,7 +44,7 @@ export default function FavoritosPage() {
                 ) : (
                     favoritos.reduce((uniqueProducts, items) => {
                         const existingProduct = uniqueProducts.find(product => product.key === items.key);
-                        
+
                         if (!existingProduct) {
                             uniqueProducts.push(items);
                         }

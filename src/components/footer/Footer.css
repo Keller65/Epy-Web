@@ -1,40 +1,24 @@
-footer{
-    background-color: rgb(0, 0, 0);
-    color: white;
+footer {
     width: 100%;
-    height: auto;
-    padding: 40px 20px; 
-    font-weight: 200;
+    padding: 40px 0;
     display: flex;
-    gap: 60px;
-    overflow: hidden;
+    width: 80%;
+    margin: auto;
 }
 
-li{
-    display: flex;
-    gap: 13px;
+#correo_suscribe {
+    border: solid 1px rgb(223, 223, 223);
+    outline-color: rgb(194, 194, 194);
+    background-color: transparent;
+    width: 250px;
+    font-size: 12px;
+    padding: 8px 14px;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
 }
 
-.coordenadas, .plataformas, .contacto{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.redes{
-    display: flex;
-    gap: 20px;
-}
-
-#social-icons{
-    height: 20px;
-    width: 20px;
-    aspect-ratio: 1;
-    cursor: pointer;
-}
-
-@media (max-width: 450px){
-    footer{
+@media (max-width: 450px) {
+    footer {
         padding-bottom: 90px;
     }
 }

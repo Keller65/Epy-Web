@@ -17,10 +17,6 @@
     flex-direction: column;
 }
 
-#header-payment {
-    width: 100%;
-}
-
 .modal-lista {
     background-color: #24242448;
     backdrop-filter: blur(1px);

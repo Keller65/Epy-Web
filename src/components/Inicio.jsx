@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HeaderComponent } from './header/header.jsx';
+import { Navbar } from './Navbar.jsx';
 import { listaCards, app, Carrusel } from './data.js';
 import { Footer } from './footer/Footer.jsx';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -12,7 +12,7 @@ export function InicioApp() {
   const foto = localStorage.getItem("photoUser");
   const navigate = useNavigate();
   const auth = getAuth(app);
-  const [, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   const [, setUserCountry] = useState(null);
   const [imagenes, setImagenes] = useState([]);
   const [opacity, setOpacity] = useState(0);
@@ -39,6 +39,7 @@ export function InicioApp() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       if (user) {
+        console.log(user)
         console.log('El usuario está autenticado');
         Carrusel();
       } else {
@@ -102,7 +103,7 @@ export function InicioApp() {
         <header className="menu">
           <aside className='controls'>
             <img src={foto ? foto : 'avatar.svg'} alt="foto del usuarios" className='foto' />
-            <HeaderComponent />
+            <Navbar verify={user} />
           </aside>
         </header>
 

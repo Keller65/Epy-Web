@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Package, CircleDollarSign, CarTaxiFront, CalendarDays } from 'lucide-react';
 import { app, db } from './data.js';
-import { HeaderComponent } from './header/header.jsx';
+import { Navbar } from './Navbar.jsx';
 import { Lista } from './ListaProductos/page.jsx';
 import '../styles/Pedidos.css';
 
@@ -87,8 +87,8 @@ export function Pedidos() {
   return (
     <React.Fragment>
       <div className="container-payment">
-        <header id="header-payment">
-          <HeaderComponent />
+        <header className="flex justify-end">
+          <Navbar />
         </header>
 
         <div className="cards-container">

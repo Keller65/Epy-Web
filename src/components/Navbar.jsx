@@ -4,15 +4,18 @@ import { Carrito } from './Carrito.jsx';
 import { X } from 'lucide-react';
 import '../styles/navbar.css';
 
-export function Navbar() {
+export function Navbar({ verify }) {
     const [modalOpen, setModalOpen] = useState(false);
     const [fillHome, setFillHome] = useState(false);
     const [fillSearch, setFillSearch] = useState(false);
     const [fillOrders, setFillOrders] = useState(false);
     const [fillProfile, setFillProfile] = useState(false);
+    const [auth, setAuth] = useState([]);
 
     const location = useLocation();
     const navigate = useNavigate();
+
+    const foto = localStorage.getItem("photoUser");
 
     useEffect(() => {
         const pathname = location.pathname;
@@ -21,6 +24,11 @@ export function Navbar() {
         setFillOrders(pathname === '/Orders');
         setFillProfile(pathname === '/Profile');
     }, [location]);
+
+    useEffect(() => {
+        setAuth(verify);
+        console.log(auth)
+    }, [])
 
     const openModal = () => {
         setModalOpen(true);
@@ -66,6 +74,15 @@ export function Navbar() {
                         <path d="M13 17.875C15.6924 17.875 17.875 15.6924 17.875 13C17.875 10.3076 15.6924 8.125 13 8.125C10.3076 8.125 8.125 10.3076 8.125 13C8.125 15.6924 10.3076 17.875 13 17.875Z" stroke={fillProfile ? 'white' : 'black'} fill={fillProfile ? 'black' : 'transparent'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </Link>
+
+                <div className="userContact">
+                    <img src={foto} alt="foto de perfil" className='FotoUser' />
+
+                    <div className="contact">
+                        <p id='name'>{localStorage.getItem("nameuser")}</p>
+                        <p id="correo">{localStorage.getItem("correo")}</p>
+                    </div>
+                </div>
                 <Outlet />
             </nav>
 

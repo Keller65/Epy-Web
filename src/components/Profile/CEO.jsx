@@ -1,4 +1,4 @@
-import { HeaderComponent } from '../header/header';
+import { Navbar } from '../Navbar'
 import { BadgeCheck } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 import { getDatabase, set, ref, onValue, remove } from "firebase/database";
@@ -72,7 +72,7 @@ export function ProfileCEO() {
 
     return (
         <div className="CEO__screen">
-            <HeaderComponent />
+            <Navbar />
 
             <header className="CEO__Profile">
                 <picture className='container__picture'>

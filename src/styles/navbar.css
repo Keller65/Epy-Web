@@ -1,5 +1,46 @@
-*{
+:root {
+    --Poppins: 'Poppins', sans-serif;
+}
+
+* {
     font-display: swap;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.userContact {
+    display: flex;
+    font-size: 13px;
+    color: #d8be85;
+    padding: 5px;
+    border-radius: 50px;
+    gap: 10px;
+    height: 50px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: gray;
+    font-family: var(--Poppins);
+}
+
+#correo {
+    margin-top: -3px;
+    font-family: var(--Poppins);
+    letter-spacing: 1.2px;
+    color: gray;
 }
 
 .navbar {
@@ -51,6 +92,7 @@
     .navbar {
         position: fixed;
         height: auto;
+        justify-content: centerp;
         width: 100%;
         background-color: rgba(255, 252, 247, 0.7);
         left: 0;
@@ -73,7 +115,7 @@
         width: 35px;
     }
 
-    .btnModal-close{
+    .btnModal-close {
         padding: 10px;
         background-color: transparent;
         size: 10px;

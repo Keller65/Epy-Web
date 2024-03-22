@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import '../styles/Buscador.css';
 import { ProductosDB } from './ProductosDB';
-import { HeaderComponent } from './header/header.jsx';
+import { Navbar } from "./Navbar";
 import { Search, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import '../styles/Buscador.css';
 
 export function BuscadorApp() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -48,7 +48,7 @@ export function BuscadorApp() {
   return (
     <section className="buscador-container">
       <header id="header-buscador">
-        <HeaderComponent />
+        <Navbar />
       </header>
 
       <form onSubmit={SubmitForm} id="form">
