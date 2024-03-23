@@ -18,10 +18,8 @@ function DragAndDrop() {
         <form>
           <input className='w-full h-[35px] rounded-[6px] text-sm px-3' type="text" name="productos" id="productos" />
         </form>
-
         <div className='bg-blue-500 h-60'></div>
       </section>
-
       <section></section>
     </div>
   );
