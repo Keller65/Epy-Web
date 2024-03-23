@@ -20,8 +20,8 @@
 .Producto__Card {
     width: 174px;
     position: relative;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.116);
-    aspect-ratio: 1;
+    box-shadow: 0 0 2px rgba(44, 44, 44, 0.116);
+    aspect-ratio: 16/9;
 }
 
 .icon__fav {
@@ -29,12 +29,6 @@
     top: 7px;
     left: 7px;
     stroke: var(--Color);
-}
-
-.Producto__Card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
 }
 
 .section__filter {

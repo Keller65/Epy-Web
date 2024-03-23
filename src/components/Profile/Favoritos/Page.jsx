@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Bookmark, ChevronLeft } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { Navbar } from '../../Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { Toaster, toast } from 'sonner';
@@ -51,9 +51,15 @@ export default function FavoritosPage() {
 
                         return uniqueProducts;
                     }, []).map((uniqueProduct, key) => (
-                        <div className="Producto__Card" key={key} onClick={() => DeleteFav(uniqueProduct.key)}>
-                            <Bookmark size={18} className='icon__fav' fill='black' />
-                            <img src={uniqueProduct.imagenProduct} alt={uniqueProduct.producto} />
+                        <div className="flex gap-1 flex-col items-center justify-center py-3" key={key} onClick={() => DeleteFav(uniqueProduct.key)}>
+                            <picture className='bg-[#fffaee] w-[185px] h-[170px] flex items-center justify-center aspect-video'>
+                                <img className='h-full w-auto aspect-[1]' src={uniqueProduct.imagenProduct} alt={uniqueProduct.producto} />
+                            </picture>
+
+                            <div className='flex w-full items-center justify-between'>
+                                <p className=' font-normal text-[16px]'>{uniqueProduct.producto}</p>
+                                <p className=' font-normal'>L.{uniqueProduct.precio}</p>
+                            </div>
                         </div>
                     ))
                 )}

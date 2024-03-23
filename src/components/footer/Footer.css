@@ -1,5 +1,4 @@
 footer {
-    width: 100%;
     padding: 40px 0;
     display: flex;
     width: 80%;
@@ -20,5 +19,20 @@ footer {
 @media (max-width: 450px) {
     footer {
         padding-bottom: 90px;
+        width: 100%;
+    }
+
+    .footer__info{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #Welcome__bless{
+        font-size: 25px;
+    }
+
+    #footer__contact{
+        padding: 0 20px;
+        width: 100%;
     }
 }

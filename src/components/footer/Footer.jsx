@@ -3,8 +3,8 @@ import './Footer.css';
 export function Footer() {
     return (
         <footer className="flex flex-col gap-12 mt-10">
-            <section className="flex items-center justify-between w-full">
-                <h1 className="text-black font-medium text-[32px] leading-[30px]">Puedes Comunicarte <p className="">con el Soporte de Epy</p> </h1>
+            <section className="flex items-center justify-between w-full footer__info">
+                <h1 id='Welcome__bless' className="text-black font-medium text-[32px] leading-[30px]">Puedes Comunicarte <p>con el Soporte de Epy</p> </h1>
 
                 <div className="flex gap-2 flex-col">
                     <form className="flex gap-4">
@@ -15,8 +15,8 @@ export function Footer() {
                 </div>
             </section>
 
-            <section className="flex flex-col gap-4">
-                <div className="w-[350px] text-pretty">
+            <section id='footer__contact' className="flex flex-col gap-4 w-[350px]">
+                <div className="text-pretty">
                     <p className="text-sm">Puedes Seguirnos en nuestras redes sociales para estar al tanto de nuevas actualizaciones, regalos y promociones</p>
                 </div>
 
