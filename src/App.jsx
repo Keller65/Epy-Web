@@ -8,7 +8,7 @@ import Profile from "./components/Profile/Profile.jsx";
 import { Loading } from "./components/Loading.jsx";
 const Favoritos = lazy(() => import('./components/Profile/Favoritos/Page.jsx'));
 import { ProfileCEO } from "./components/Profile/CEO.jsx";
-import { Kits } from './components/Kits-Personalizables/Kits.jsx';
+import DragAndDrop from './components/Kits-Personalizables/Kits.jsx';
 import './index.css';
 
 export function App() {
@@ -35,7 +35,7 @@ export function App() {
 
           <Route path="/Profile/Favoritos" element={<Favoritos />} />
           <Route path="/Profile/created" element={<ProfileCEO />} />
-          <Route path="/Kits" element={<Kits />} />
+          <Route path="/Kits" element={<DragAndDrop />} />
 
           <Route path="/" element={isLoggedIn ? <InicioApp onLogout={handleLogout} /> : <LoginApp onLogin={handleLogin} />} />
         </Routes>

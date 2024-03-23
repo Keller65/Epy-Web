@@ -74,7 +74,7 @@ export function LoginApp() {
 
         <button className="FacebookBTN" onClick={handleSignInWithFacebook}>
           <img
-            src="assets/facebook.svg"
+            src="social/facebook.svg"
             alt="facebook img"
             className="FacebookImg"
           />

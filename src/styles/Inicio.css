@@ -2,11 +2,12 @@
     --Spacing: 2px;
 }
 
-* {
+*::selection {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-display: swap;
+    background-color: #ffe9c7;
 }
 
 body {

@@ -4,13 +4,12 @@ import { Carrito } from './Carrito.jsx';
 import { X } from 'lucide-react';
 import '../styles/navbar.css';
 
-export function Navbar({ verify }) {
+export function Navbar() {
     const [modalOpen, setModalOpen] = useState(false);
     const [fillHome, setFillHome] = useState(false);
     const [fillSearch, setFillSearch] = useState(false);
     const [fillOrders, setFillOrders] = useState(false);
     const [fillProfile, setFillProfile] = useState(false);
-    const [auth, setAuth] = useState([]);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -24,11 +23,6 @@ export function Navbar({ verify }) {
         setFillOrders(pathname === '/Orders');
         setFillProfile(pathname === '/Profile');
     }, [location]);
-
-    useEffect(() => {
-        setAuth(verify);
-        console.log(auth)
-    }, [])
 
     const openModal = () => {
         setModalOpen(true);
