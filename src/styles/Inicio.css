@@ -393,4 +393,11 @@ body {
     .marcaLogos {
         margin: 0 5px;
     }
+
+    #carrusel_products{
+        display: flex;
+        overflow: scroll;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 }

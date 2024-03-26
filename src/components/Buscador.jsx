@@ -1,37 +1,19 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { ProductosDB } from './ProductosDB';
 import { Navbar } from "./Navbar";
 import { Search, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import '../styles/Buscador.css';
 
 export function BuscadorApp() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedFilter, setSelectedFilter] = useState('');
   const navigate = useNavigate();
-  const isVerifiedRef = useRef(false);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const initialSearchTerm = searchParams.get('q') || '';
+  const initialFilter = '';
 
-  useEffect(() => {
-    const isUserLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (isUserLoggedIn && !isVerifiedRef.current) {
-      console.log('esta verify');
-      isVerifiedRef.current = true;
-    } else if (!isUserLoggedIn) {
-      navigate('/');
-      isVerifiedRef.current = false;
-    }
-
-    const searchParams = new URLSearchParams(window.location.search);
-    const searchTermFromUrl = searchParams.get('q');
-
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
-  }, [navigate]);
-
-  const SubmitForm = (e) => {
-    e.preventDefault();
-  }
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
+  const [selectedFilter, setSelectedFilter] = useState(initialFilter);
 
   const handleInputChange = (event) => {
     const newTerm = event.target.value;
@@ -44,6 +26,10 @@ export function BuscadorApp() {
     setSearchTerm(valor);
     navigate(`/Search?q=${encodeURIComponent(valor)}`);
   };
+
+  const SubmitForm = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <section className="buscador-container">

@@ -10,10 +10,8 @@ export function Navbar() {
     const [fillSearch, setFillSearch] = useState(false);
     const [fillOrders, setFillOrders] = useState(false);
     const [fillProfile, setFillProfile] = useState(false);
-
     const location = useLocation();
     const navigate = useNavigate();
-
     const foto = localStorage.getItem("photoUser");
 
     useEffect(() => {
@@ -70,7 +68,13 @@ export function Navbar() {
                 </Link>
 
                 <div className="userContact">
-                    <img src={foto} alt="foto de perfil" className='FotoUser' />
+                    {foto ? (
+                        <img src={foto} alt="foto de perfil" className='FotoUser' />
+                    ) :
+                        <Link id='sesion__button' title='Iniciar Sesion' to='/' className="flex items-center justify-center h-auto px-6 bg-black text-white">
+                            Iniciar Sesion
+                        </Link>
+                    }
 
                     <div className="contact">
                         <p id='name'>{localStorage.getItem("nameuser")}</p>

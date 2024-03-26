@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, app } from './data';
 import ProductModal from './ProductModal';
 import '../styles/Productos.css';
+import { DATBASE_PRODUCTS } from './data';
 
 export function ProductosDB({ searchTerm }) {
   const [productos, setProductos] = useState([]);
@@ -14,7 +15,7 @@ export function ProductosDB({ searchTerm }) {
 
   const obtenerProductos = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'Productos'));
+      const querySnapshot = await getDocs(collection(db, DATBASE_PRODUCTS));
       const datosProductos = [];
       querySnapshot.forEach((doc) => {
         datosProductos.push({ key: doc.id, ...doc.data() });

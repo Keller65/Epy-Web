@@ -14,6 +14,7 @@ export const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const DATBASE_NODE = import.meta.env.VITE_NODE_DATABASE;
+export const DATBASE_PRODUCTS = import.meta.env.VITE_NODE_PROUCTS_DATABASE;
 
 export async function HacerPedido(cartItems) {
   const nombre = localStorage.getItem("nameuser");

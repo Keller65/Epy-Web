@@ -27,7 +27,6 @@ export function App() {
 
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/" element={<LoginApp />} />
           <Route path="/Home" element={<InicioApp />} />
           <Route path="/Orders" element={<Pedidos />} />
           <Route path="/Search" element={<BuscadorApp />} />
