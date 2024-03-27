@@ -26,7 +26,6 @@ export function LoginApp() {
         localStorage.setItem('nameuser', result.user.displayName);
         localStorage.setItem('correo', result.user.email);
         localStorage.setItem('isLoggedIn', 'true');
-
         navigate('/Home');
       })
       .catch((error) => {

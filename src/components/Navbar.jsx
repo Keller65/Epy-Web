@@ -68,13 +68,14 @@ export function Navbar() {
                 </Link>
 
                 <div className="userContact">
-                    {foto ? (
+                    <img src={foto} alt="foto de perfil" className='FotoUser' />
+                    {/*{foto ? (
                         <img src={foto} alt="foto de perfil" className='FotoUser' />
                     ) :
                         <Link id='sesion__button' title='Iniciar Sesion' to='/' className="flex items-center justify-center h-auto px-6 bg-black text-white">
                             Iniciar Sesion
                         </Link>
-                    }
+                    }*/}
 
                     <div className="contact">
                         <p id='name'>{localStorage.getItem("nameuser")}</p>

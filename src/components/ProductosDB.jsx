@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { collection, getDocs } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db, app } from './data';
-import ProductModal from './ProductModal';
+import ProductDetails from './ProductDetails';
 import '../styles/Productos.css';
 import { DATBASE_PRODUCTS } from './data';
 
@@ -88,7 +88,7 @@ export function ProductosDB({ searchTerm }) {
           </div>
         ))}
       </div>
-      {modalAbierto && <ProductModal producto={productoSeleccionado} cerrarModal={cerrarModal} />}
+      {modalAbierto && <ProductDetails producto={productoSeleccionado} cerrarModal={cerrarModal} />}
     </React.Fragment>
   ) : null;
 }

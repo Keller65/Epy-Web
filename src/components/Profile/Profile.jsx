@@ -16,7 +16,6 @@ const GetStories = (callback) => {
         onValue(historyRef, (snapshot) => {
             const historia = snapshot.val();
             callback(historia);
-            console.log(historia);
         });
     } catch (error) {
         console.error("Error al obtener datos del historial:", error.message);

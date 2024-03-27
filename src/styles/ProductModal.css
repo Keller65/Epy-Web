@@ -3,6 +3,7 @@
 }
 
 .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(.7px);
     height: 100vh;
     position: fixed;

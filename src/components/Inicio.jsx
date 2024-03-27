@@ -72,7 +72,7 @@ export function InicioApp() {
   const toggleLike = (index) => {
     const newLikes = [...likes];
     newLikes[index] = !newLikes[index];
-    setLikes(newLikes);
+    setLikes(newLikes); yy
     //const audioUrl = 'social/tap.mp3';
     //const audio = new Audio(audioUrl);
     //audio.play();
@@ -90,7 +90,7 @@ export function InicioApp() {
             <Navbar />
           </aside>
         </header>
-
+        
         <main className='content-class-sections'>
           <section id='presentacion-screen'>
             <div className='flex justify-center items-center flex-col'>

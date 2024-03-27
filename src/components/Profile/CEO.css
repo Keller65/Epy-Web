@@ -3,25 +3,13 @@
 }
 
 .CEO__screen{
-    padding: 15px 15px 70px 15px;
-    height: 100dvh;
-}
-
-.container__picture{
-    height: 50px;
-    width: 50px;
-    position: relative;
+    height: 100%;
+    width: 80%;
+    margin: auto;
 }
 
 #photo__CEO{
     border-radius: 50%;
-}
-
-.CEO__Profile{
-    display: flex;
-    gap: 10px;
-    line-height: 18px;
-    align-items: center;
 }
 
 #name_ceo{

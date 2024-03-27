@@ -72,17 +72,21 @@ export function ProfileCEO() {
 
     return (
         <div className="CEO__screen">
-            <Navbar />
+            <div className='w-full flex justify-end px-0 pt-[5px]'>
+                <Navbar />
+            </div>
 
-            <header className="CEO__Profile">
-                <picture className='container__picture'>
-                    <img src={photoCEO} alt="photo CEO" id='photo__CEO' />
-                    <BadgeCheck className='icon__check' size={20} fill="#ffdc38" stroke="#fffcf7" />
-                </picture>
+            <header className="w-full flex relative">
+                <div className='flex gap-3 items-center relative'>
+                    <picture className='relative w-[50px] h-[50px]'>
+                        <img src={photoCEO} alt="photo CEO" id='photo__CEO' width='50' height='50' />
+                        <BadgeCheck className='absolute bottom-[-5px] right-0' size={20} fill="#ffdc38" stroke="#fffcf7" />
+                    </picture>
 
-                <div>
-                    <p id="name_ceo">Margie Lopez</p>
-                    <p id='followers'>{totalFollowers} seguidores</p>
+                    <div>
+                        <p id="name_ceo">Margie Lopez</p>
+                        <p id='followers'>{totalFollowers} seguidores</p>
+                    </div>
                 </div>
 
                 <button className={`${follow ? 'following' : 'not-following'}`} onClick={followUser}>

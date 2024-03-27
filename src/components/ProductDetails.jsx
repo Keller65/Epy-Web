@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import '../styles/ProductModal.css';
 
-const ProductModal = ({ producto, cerrarModal }) => {
+const ProductDetails = ({ producto, cerrarModal }) => {
   const [estadoCarrito, setEstadoCarrito] = useState('');
   const [botonTexto, setBotonTexto] = useState('Agregar a la cesta');
   const [favoritos, setFavoritos] = useState({});
@@ -134,7 +134,7 @@ const ProductModal = ({ producto, cerrarModal }) => {
   );
 };
 
-ProductModal.propTypes = {
+ProductDetails.propTypes = {
   producto: PropTypes.shape({
     key: PropTypes.string.isRequired,
     imagenProduct: PropTypes.string.isRequired,
@@ -150,4 +150,4 @@ ProductModal.propTypes = {
   cerrarModal: PropTypes.func.isRequired,
 };
 
-export default ProductModal;
+export default ProductDetails;
