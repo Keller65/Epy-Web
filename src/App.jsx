@@ -1,5 +1,5 @@
 import React, { useState, lazy, Suspense } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { LoginApp } from "./components/Login.jsx";
 import { InicioApp } from "./components/Inicio.jsx";
 import { Pedidos } from './components/Pedidos.jsx';
@@ -9,10 +9,12 @@ import { Loading } from "./components/Loading.jsx";
 const Favoritos = lazy(() => import('./components/Profile/Favoritos/Page.jsx'));
 import { ProfileCEO } from "./components/Profile/CEO.jsx";
 import DragAndDrop from './components/Kits-Personalizables/Kits.jsx';
-import './index.css';
+import { Navbar } from "./components/Navbar.jsx";
 
 export function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
+  const showNavbar = location.pathname !== "/";
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -26,6 +28,12 @@ export function App() {
     <React.Fragment>
 
       <Suspense fallback={<Loading />}>
+        {showNavbar && (
+          <div className="w-[80%] m-auto flex justify-end">
+            <Navbar />
+          </div> 
+        )}
+        
         <Routes>
           <Route path="/Home" element={<InicioApp />} />
           <Route path="/Orders" element={<Pedidos />} />

@@ -1,4 +1,3 @@
-import { Navbar } from '../Navbar'
 import { BadgeCheck } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 import { getDatabase, set, ref, onValue, remove } from "firebase/database";
@@ -72,10 +71,6 @@ export function ProfileCEO() {
 
     return (
         <div className="CEO__screen">
-            <div className='w-full flex justify-end px-0 pt-[5px]'>
-                <Navbar />
-            </div>
-
             <header className="w-full flex relative">
                 <div className='flex gap-3 items-center relative'>
                     <picture className='relative w-[50px] h-[50px]'>

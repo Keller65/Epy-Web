@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import { Navbar } from "../Navbar.jsx";
 import { BadgeCheck, ChevronRight, Heart, WalletCards, MessagesSquare } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
@@ -112,10 +111,6 @@ const Profile = () => {
     return (
         <React.Fragment>
             <div className="Profile">
-                <nav className="flex justify-end">
-                    <Navbar />
-                </nav>
-
                 <header className="header__profile">
                     <img src={fotoProfile} alt="foto del usuario" className="foto__profile" />
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar } from './Navbar.jsx';
 import { listaCards, Carrusel } from './data.js';
 import { Footer } from './footer/Footer.jsx';
 import { Link } from 'react-router-dom';
@@ -72,7 +71,7 @@ export function InicioApp() {
   const toggleLike = (index) => {
     const newLikes = [...likes];
     newLikes[index] = !newLikes[index];
-    setLikes(newLikes); yy
+    setLikes(newLikes);
     //const audioUrl = 'social/tap.mp3';
     //const audio = new Audio(audioUrl);
     //audio.play();
@@ -87,7 +86,6 @@ export function InicioApp() {
         <header className="menu">
           <aside className='controls'>
             <img src={foto ? foto : 'avatar.svg'} alt="foto del usuarios" className='foto' />
-            <Navbar />
           </aside>
         </header>
         
@@ -173,7 +171,7 @@ export function InicioApp() {
 
         <section className='w-full flex flex-col my-4 overflow-hidden overflow-x-scroll justify-center'>
           <div id='products' className="w-full flex items-center justify-center gap-2 pt-10">
-            <img src="assets/sparkle.svg" alt="sparkle.svg" className='' />
+            <img src="assets/sparkle.svg" alt="sparkle.svg" height='20' width='20' className='aspect-square' />
             <h1 className='text-xl'>Productos en Promocion</h1>
           </div>
           <div id='carrusel_products' className='w-full flex gap-4 my-4 overflow-hidden overflow-x-scroll justify-center'>

@@ -16,11 +16,11 @@
 .userContact {
     display: flex;
     font-size: 13px;
-    color: #d8be85;
     padding: 5px;
-    border-radius: 50px;
     gap: 10px;
     height: 50px;
+    width: fit-content;
+    aspect-ratio: auto;
 }
 
 .contact {
@@ -122,5 +122,9 @@
         position: absolute;
         z-index: 99;
         size: 5px;
+    }
+
+    .userContact {
+        display: none;
     }
 }

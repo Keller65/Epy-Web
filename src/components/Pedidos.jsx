@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Package, CircleDollarSign, CarTaxiFront, CalendarDays } from 'lucide-react';
 import { app, db } from './data.js';
-import { Navbar } from './Navbar.jsx';
 import { Lista } from './ListaProductos/page.jsx';
 import '../styles/Pedidos.css';
 
@@ -87,9 +86,6 @@ export function Pedidos() {
   return (
     <React.Fragment>
       <div className="container-payment">
-        <header className="flex justify-end">
-          <Navbar />
-        </header>
 
         <div className="cards-container">
           {userOrders.length === 0 && <div className="no-orders">No hay pedidos recientes</div>}

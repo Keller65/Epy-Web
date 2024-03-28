@@ -68,7 +68,7 @@ export function Navbar() {
                 </Link>
 
                 <div className="userContact">
-                    <img src={foto} alt="foto de perfil" className='FotoUser' />
+                    <img src={foto} width='40' height='40' alt="foto de perfil" className='FotoUser' />
                     {/*{foto ? (
                         <img src={foto} alt="foto de perfil" className='FotoUser' />
                     ) :
@@ -76,7 +76,6 @@ export function Navbar() {
                             Iniciar Sesion
                         </Link>
                     }*/}
-
                     <div className="contact">
                         <p id='name'>{localStorage.getItem("nameuser")}</p>
                         <p id="correo">{localStorage.getItem("correo")}</p>

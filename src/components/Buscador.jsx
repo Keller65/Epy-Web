@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ProductosDB } from './ProductosDB';
-import { Navbar } from "./Navbar";
 import { Search, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import '../styles/Buscador.css';
@@ -33,10 +32,6 @@ export function BuscadorApp() {
 
   return (
     <section className="buscador-container">
-      <header id="header-buscador">
-        <Navbar />
-      </header>
-
       <form onSubmit={SubmitForm} id="form">
         <span className="lupa-icon">
           <Search size={20} strokeWidth="1.7" stroke="gray" />

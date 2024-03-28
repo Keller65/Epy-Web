@@ -1,17 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-display: swap;
 }
 
-body{
+html {
+    scroll-behavior: smooth;
+    cursor: url('assets/cursor.svg'), auto;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#root {
+    background-image: radial-gradient(100% 10% at 0% 0%, rgb(255 187 0 / 14%) 0, rgba(0, 163, 255, 0) 50%, rgba(0, 163, 255, 0) 100%);
+}
+
+body {
     background-color: rgb(255, 255, 255);
 }
 
-.PantallaInicio-login{
+.PantallaInicio-login {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -20,7 +39,7 @@ body{
     background-color: #fffcf7;
 }
 
-.Formulario{
+.Formulario {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -29,11 +48,13 @@ body{
     padding: 0 20px;
 }
 
-.LoginBTN, .FacebookBTN{
+.LoginBTN,
+.FacebookBTN {
     border: solid 1px #e6e6e6;
     color: #000000;
     height: 50px;
-    width: 250px; /*250px*/
+    width: 250px;
+    /*250px*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,16 +65,15 @@ body{
     font-weight: 400;
 }
 
-.GoogleImg{
+.GoogleImg {
     height: 35px;
     aspect-ratio: 1;
 }
 
-.FacebookImg{
+.FacebookImg {
     height: 20px;
     margin-right: 8px;
     aspect-ratio: 1;
 }
 
-@media (max-width: 450px) {
-}
+@media (max-width: 450px) {}
